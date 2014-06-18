@@ -33,18 +33,29 @@ class Entity(Enum):
     User = 'user/'
     Users = 'users/'
     Valuelist = 'valuelists/'
+    Content = 'content/'
 
 
-def encoded_dict(in_dict):
-    out_dict = {}
-    for k, v in in_dict.iteritems():
-        if isinstance(v, unicode):
-            v = v.encode('utf8')
-        elif isinstance(v, str):
-            # Must be encoded in UTF-8
-            v.decode('utf8')
-        out_dict[k] = v
-    return out_dict
+class Utils:
+    @staticmethod
+    def _url_encode_dict(in_dict):
+        out_dict = {}
+        for k, v in in_dict.iteritems():
+            if isinstance(v, unicode):
+                v = v.encode('utf8')
+            elif isinstance(v, str):
+                # Must be encoded in UTF-8
+                v.decode('utf8')
+            out_dict[k] = v
+        return out_dict
+
+    @staticmethod
+    def add_url_parameters(url, parameters):
+        scheme, netloc, path, query_string, fragment = urlsplit(url)
+        query = parse_qs(query_string)
+        query.update(parameters)
+        query = Utils._url_encode_dict(query)
+        return urlunsplit((scheme, netloc, path, urlencode(query), fragment))
 
 
 class CoredataClient:
@@ -58,13 +69,6 @@ class CoredataClient:
         self.host = urljoin(host, '/api/v2/')
         self.headers = {'content-type': 'application/json'}
 
-    def _add_url_parameters(self, url, parameters):
-        scheme, netloc, path, query_string, fragment = urlsplit(url)
-        query = parse_qs(query_string)
-        query.update(parameters)
-        query = encoded_dict(query)
-        return urlunsplit((scheme, netloc, path, urlencode(query), fragment))
-
     def create(self, entity, payload, sync=True, fetch_entity=True):
         """
         Creates a new entity with the payload and returns the id of that
@@ -74,7 +78,7 @@ class CoredataClient:
 
         # Append the sync parameter to the URL
         params = {'sync': str(sync).lower()}
-        url = self._add_url_parameters(url, params)
+        url = Utils.add_url_parameters(url, params)
 
         # Make a post request with the payload to the appropriate entity
         # endpoint
@@ -96,52 +100,53 @@ class CoredataClient:
             # Otherwise just return the location of the element.
             return url
 
-    def get(self, entity, id=None, sub_entity=None, limit=20):
+    def get(self, entity, id=None, sub_entity=None, offset=0, limit=20,
+            search_terms=None):
         """
-        Gets either all the entities or a specific one if id is supplied
+        Gets all entities that fufill the given filtering if provided.
         """
         url = urljoin(self.host, entity.value)
         url = urljoin(url, id + '/') if id else url
         url = urljoin(url, sub_entity.value) if sub_entity else url
-        url = self._add_url_parameters(url, {'limit': limit}) if limit else url
+        terms = {'offset': offset}
+        if search_terms:
+            terms.update(search_terms)
+        if limit:
+            terms.update({'limit': limit})
+        url = Utils.add_url_parameters(url, terms)
+        # TODO: Abstract this one out and make recursive? generator?
         r = requests.get(url, auth=self.auth, headers=self.headers)
-        if r.ok:
-            return r.json()
+        if sub_entity == Entity.Content:
+            return r.content
+        elif r.ok:
+            j = r.json()
+
+            # Sometimes you just get one object back with no meta info.
+            if 'meta' not in j:
+                return [j]
+
+            if limit:
+                return j['objects']
+
+            next_path = j['meta']['next']
+
+            while next_path:
+                offset += limit
+                url = urljoin(self.host, entity.value)
+                url = urljoin(url, id + '/') if id else url
+                url = urljoin(url, sub_entity.value) if sub_entity else url
+                terms = {'offset': offset}
+                url = Utils.add_url_parameters(
+                    url, {'offset': offset})
+                r = requests.get(url, auth=self.auth, headers=self.headers)
+                j['objects'].extend(r.json()['objects'])
+                next_path = r.json()['meta']['next']
+
+            return j['objects']
         else:
             raise Exception(
                 'Error occured! Status code is {code} for {url}'.format(
                     code=r.status_code, url=url))
-
-    def find_one(self, entity, search_terms):
-        """
-        Finds one and only one entity in coredata
-        """
-        url = urljoin(self.host, entity.value)
-        url = self._add_url_parameters(url, search_terms)
-        r = requests.get(url, auth=self.auth, headers=self.headers)
-        if r.ok:
-            d = r.json()
-            if d['meta']['total_count'] != 1:
-                raise Exception(
-                    'There where more than one entity that fufill the given '
-                    'search terms. {search_terms}'.format(
-                        search_terms=search_terms))
-            return d['objects'][0]
-        else:
-            raise Exception('Error occured! Status code is {code}'.format(
-                code=r.status_code))
-
-    def find(self, entity, search_terms):
-        url = urljoin(self.host, entity.value)
-        url = self._add_url_parameters(url, search_terms)
-        r = requests.get(url, auth=self.auth, headers=self.headers)
-        if r.ok:
-            d = r.json()
-            return d['objects']
-        else:
-            raise Exception('Error occured! Status code is {code}'.format(
-                code=r.status_code))
-
 
 if __name__ == '__main__':
     arguments = docopt(__doc__, version='Coredata Python Client 0.1')

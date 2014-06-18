@@ -11,3 +11,4 @@ Feel free to point out issues and/or submit pull requests.
 TODO
 ----
 - Cache requests
+- Add tests
