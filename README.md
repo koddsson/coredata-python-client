@@ -12,5 +12,16 @@ Feel free to point out issues and/or submit pull requests.
 
 TODO
 ----
-- Cache requests
-- Add tests
+- Add tests for:
+  - comments
+  - contacts
+  - docs
+  - dynatypes
+  - files
+  - nav
+  - projects (editing and creating).
+  - spaces
+  - tasks
+  - user
+  - users
+  - valuelists
