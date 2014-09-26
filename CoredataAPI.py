@@ -19,8 +19,13 @@ import requests
 
 from enum import Enum
 from pprint import pprint
-from urllib import urlencode
-from urlparse import urljoin, urlsplit, urlunsplit, parse_qs
+try:
+    # Python3
+    from urllib.parse import urlencode, urljoin, urlsplit, urlunsplit, parse_qs
+except ImportError:
+    # Python2
+    from urllib import urlencode
+    from urlparse import urljoin, urlsplit, urlunsplit, parse_qs
 
 
 class Entity(Enum):
@@ -38,23 +43,10 @@ class Entity(Enum):
 
 class Utils:
     @staticmethod
-    def _url_encode_dict(in_dict):
-        out_dict = {}
-        for k, v in in_dict.iteritems():
-            if isinstance(v, unicode):
-                v = v.encode('utf8')
-            elif isinstance(v, str):
-                # Must be encoded in UTF-8
-                v.decode('utf8')
-            out_dict[k] = v
-        return out_dict
-
-    @staticmethod
     def add_url_parameters(url, parameters):
         scheme, netloc, path, query_string, fragment = urlsplit(url)
         query = parse_qs(query_string)
         query.update(parameters)
-        query = Utils._url_encode_dict(query)
         return urlunsplit((scheme, netloc, path, urlencode(query), fragment))
 
 
