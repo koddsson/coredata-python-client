@@ -152,9 +152,6 @@ class CoredataClient:
                 # single object.
                 return {'objects': [j]}
 
-            if limit:
-                return j['objects']
-
             next_path = j['meta']['next']
 
             while next_path:

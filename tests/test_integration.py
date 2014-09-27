@@ -122,15 +122,21 @@ class TestProjects(TestCase):
         # TODO. Assert is deleted.
 
     def test_getting_all_projects(self):
-        data = open('tests/json/get_projects.json').read()
-        httpretty.register_uri(httpretty.GET,
-                               "https://example.coredata.is/api/v2/projects/",
-                               body=data,
-                               content_type="application/json; charset=utf-8")
-        client = CoredataClient(host='https://example.coredata.is',
-                                auth=('username', 'password'))
+        httpretty.register_uri(
+            httpretty.GET,
+            "https://example.coredata.is/api/v2/projects/",
+            responses=[
+                httpretty.Response(
+                    body=open('tests/json/get_projects.json').read()),
+                httpretty.Response(
+                    body=open('tests/json/get_projects_last.json').read()),
+            ],
+            content_type="application/json; charset=utf-8")
+        client = CoredataClient(
+            host='https://example.coredata.is',
+            auth=('username', 'password'))
         r = client.get(Entity.Projects)
-        self.assertEqual(len(r), 20)
+        self.assertEqual(len(r), 27)
 
     @raises(CoredataError)
     def test_creating_a_project_error(self):

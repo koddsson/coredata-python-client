@@ -1,0 +1,353 @@
+{
+  "meta": {
+    "limit": 20,
+    "next": null,
+    "offset": 20,
+    "previous": null,
+    "total_count": 27
+  },
+  "objects": [
+    {
+      "aspects": {},
+      "associated_contacts_id": [],
+      "associated_users": [],
+      "connected_users": [
+        "Administrator"
+      ],
+      "contacts": [],
+      "created": "2014-09-16T10:26:40",
+      "created_by": null,
+      "description": "",
+      "due_date": "2014-09-26",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Project_plural:",
+        "caption_singular": "dynatypes_labels:Project_singular:",
+        "id": "27d4c7b0-3d8b-11e4-8db3-d39b7a5394eb"
+      },
+      "id": "f24203a0-3d8b-11e4-8e77-7ba23226dee9",
+      "identifier": "2014-1",
+      "modified": "2014-09-16T12:41:37",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/f24203a0-3d8b-11e4-8e77-7ba23226dee9/",
+      "responsible_users": [],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "project_status:Pending:",
+      "status_message": "",
+      "tags": [],
+      "title": "Nýr starfmaður - Jón Jónsson",
+      "type": "Project",
+      "version": "0.1"
+    },
+    {
+      "aspects": {},
+      "associated_contacts_id": [],
+      "associated_users": [
+        {
+          "first_name": "Guðrún",
+          "last_name": "Ósvífursdóttir",
+          "username": "gudrun"
+        },
+        {
+          "first_name": "Bárður",
+          "last_name": "Dumbsson",
+          "username": "bardur"
+        }
+      ],
+      "connected_users": [
+        "audur",
+        "bardur",
+        "gudrun"
+      ],
+      "contacts": [],
+      "created": "2014-09-17T13:41:24",
+      "created_by": "Guðrún Ósvífursdóttir",
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Programme_plural:",
+        "caption_singular": "dynatypes_labels:Programme_singular:",
+        "id": "4d3c323a-3d8c-11e4-a91b-b7c03192aa23"
+      },
+      "id": "513464e0-3e70-11e4-8e67-bb0c976204fc",
+      "identifier": "2014-10",
+      "modified": "2014-09-17T13:41:34",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/513464e0-3e70-11e4-8e67-bb0c976204fc/",
+      "responsible_users": [
+        {
+          "first_name": "Auður",
+          "last_name": "Djúpauga",
+          "username": "audur"
+        }
+      ],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "project_status:In_progress:",
+      "status_message": "",
+      "tags": [
+        "mannauður"
+      ],
+      "title": "Rýni á meginferli - Mannauður",
+      "type": "Project",
+      "version": "0.1"
+    },
+    {
+      "aspects": {
+        "timespan": {
+          "all_day": true,
+          "end_time": "2014-10-01T00:00:00",
+          "start_time": "2014-10-01T00:00:00"
+        }
+      },
+      "associated_contacts_id": [],
+      "associated_users": [],
+      "connected_users": [
+        "audur"
+      ],
+      "contacts": [],
+      "created": "2014-09-17T15:26:01",
+      "created_by": "Auður Djúpauga",
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Calender_plural:",
+        "caption_singular": "dynatypes_labels:Calender_singular:",
+        "id": "1265145c-3d9f-11e4-8efa-5f1100a132f8"
+      },
+      "id": "ee32bd6a-3e7e-11e4-9c8b-6776af69dd7b",
+      "identifier": "2014-16",
+      "modified": "2014-09-17T15:26:01",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/ee32bd6a-3e7e-11e4-9c8b-6776af69dd7b/",
+      "responsible_users": [
+        {
+          "first_name": "Auður",
+          "last_name": "Djúpauga",
+          "username": "audur"
+        }
+      ],
+      "space": {
+        "id": "6825a28c-3e6f-11e4-9c46-b7cf8e29a56f",
+        "title": "Fjármál"
+      },
+      "status": "space_status:active:",
+      "status_message": "",
+      "tags": [
+        "mánaðarmót"
+      ],
+      "title": "Yfirferð reikninga",
+      "type": "Project",
+      "version": "None.0"
+    },
+    {
+      "aspects": {
+        "timespan": {
+          "all_day": false,
+          "end_time": "2014-10-10T04:00:00",
+          "start_time": "2014-10-10T11:00:00"
+        }
+      },
+      "associated_contacts_id": [],
+      "associated_users": [
+        {
+          "first_name": "Guðrún",
+          "last_name": "Ósvífursdóttir",
+          "username": "gudrun"
+        },
+        {
+          "first_name": "Auður",
+          "last_name": "Djúpauga",
+          "username": "audur"
+        },
+        {
+          "first_name": "Bárður",
+          "last_name": "Dumbsson",
+          "username": "bardur"
+        }
+      ],
+      "connected_users": [
+        "audur",
+        "bardur",
+        "gudrun"
+      ],
+      "contacts": [],
+      "created": "2014-09-17T15:27:10",
+      "created_by": "Auður Djúpauga",
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Calender_plural:",
+        "caption_singular": "dynatypes_labels:Calender_singular:",
+        "id": "1265145c-3d9f-11e4-8efa-5f1100a132f8"
+      },
+      "id": "1790276a-3e7f-11e4-aad7-632a2841073a",
+      "identifier": "2014-17",
+      "modified": "2014-09-17T15:27:10",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/1790276a-3e7f-11e4-aad7-632a2841073a/",
+      "responsible_users": [],
+      "space": {
+        "id": "6825a28c-3e6f-11e4-9c46-b7cf8e29a56f",
+        "title": "Fjármál"
+      },
+      "status": "space_status:active:",
+      "status_message": "",
+      "tags": [
+        "hópefli"
+      ],
+      "title": "Hópefli fjármálasviðs",
+      "type": "Project",
+      "version": "None.0"
+    },
+    {
+      "aspects": {
+        "timespan": {
+          "all_day": false,
+          "end_time": "2014-10-13T15:00:00",
+          "start_time": "2014-10-13T13:00:00"
+        }
+      },
+      "associated_contacts_id": [],
+      "associated_users": [],
+      "connected_users": [
+        "audur",
+        "bardur"
+      ],
+      "contacts": [],
+      "created": "2014-09-17T15:27:55",
+      "created_by": "Auður Djúpauga",
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Calender_plural:",
+        "caption_singular": "dynatypes_labels:Calender_singular:",
+        "id": "1265145c-3d9f-11e4-8efa-5f1100a132f8"
+      },
+      "id": "3227f4d6-3e7f-11e4-9ca6-cbc2ba0ba80a",
+      "identifier": "2014-18",
+      "modified": "2014-09-17T15:28:25",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/3227f4d6-3e7f-11e4-9ca6-cbc2ba0ba80a/",
+      "responsible_users": [
+        {
+          "first_name": "Bárður",
+          "last_name": "Dumbsson",
+          "username": "bardur"
+        }
+      ],
+      "space": {
+        "id": "6825a28c-3e6f-11e4-9c46-b7cf8e29a56f",
+        "title": "Fjármál"
+      },
+      "status": "space_status:active:",
+      "status_message": "",
+      "tags": [
+        "rýni"
+      ],
+      "title": "Rýnifundur",
+      "type": "Project",
+      "version": "0.2"
+    },
+    {
+      "aspects": {
+        "timespan": {
+          "all_day": true,
+          "end_time": "2014-10-15T00:00:00",
+          "start_time": "2014-10-15T00:00:00"
+        }
+      },
+      "associated_contacts_id": [],
+      "associated_users": [],
+      "connected_users": [
+        "audur",
+        "gudrun"
+      ],
+      "contacts": [],
+      "created": "2014-09-17T15:29:26",
+      "created_by": "Auður Djúpauga",
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Calender_plural:",
+        "caption_singular": "dynatypes_labels:Calender_singular:",
+        "id": "1265145c-3d9f-11e4-8efa-5f1100a132f8"
+      },
+      "id": "68cd6c00-3e7f-11e4-8781-d7a0c640edb0",
+      "identifier": "2014-19",
+      "modified": "2014-09-17T15:29:26",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/68cd6c00-3e7f-11e4-8781-d7a0c640edb0/",
+      "responsible_users": [
+        {
+          "first_name": "Guðrún",
+          "last_name": "Ósvífursdóttir",
+          "username": "gudrun"
+        }
+      ],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "space_status:active:",
+      "status_message": "",
+      "tags": [
+        "nýr starfsmaður"
+      ],
+      "title": "Nýr starfsmaður - Jón Axelsson",
+      "type": "Project",
+      "version": "None.0"
+    },
+    {
+      "aspects": {
+        "timespan": {
+          "all_day": false
+        }
+      },
+      "associated_contacts_id": [],
+      "associated_users": [],
+      "connected_users": [
+        "stjorn-mordur",
+        "gudrun"
+      ],
+      "contacts": [],
+      "created": "2014-09-17T15:33:08",
+      "created_by": "Guðrún Ósvífursdóttir",
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Calender_plural:",
+        "caption_singular": "dynatypes_labels:Calender_singular:",
+        "id": "1265145c-3d9f-11e4-8efa-5f1100a132f8"
+      },
+      "id": "ed1c0264-3e7f-11e4-a356-776c43e00548",
+      "identifier": "2014-23",
+      "modified": "2014-09-17T15:33:08",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/ed1c0264-3e7f-11e4-a356-776c43e00548/",
+      "responsible_users": [
+        {
+          "first_name": "Mörður",
+          "last_name": "Gígja",
+          "username": "stjorn-mordur"
+        }
+      ],
+      "space": {
+        "id": "f7ca5d26-3e72-11e4-b8a1-674baf76ddd9",
+        "title": "Stjórnarfundir"
+      },
+      "status": "space_status:active:",
+      "status_message": "",
+      "tags": [
+        "stjórnarfundur"
+      ],
+      "title": "Stjórnarfundur - 1.feb.2014",
+      "type": "Project",
+      "version": "None.0"
+    }
+  ]
+}
