@@ -1,1 +1,1 @@
-from coredata import CoredataClient, Entity, CoredataError
+from .coredata import CoredataClient, Entity, CoredataError
