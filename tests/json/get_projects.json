@@ -1,4 +1,4 @@
-﻿{
+{
   "meta": {
     "limit": 20,
     "next": "/api/v2/projects/?api_key=special-key&limit=20&offset=20",

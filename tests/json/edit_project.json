@@ -1,0 +1,55 @@
+{
+  "aspects": {},
+  "associated_contacts_id": [],
+  "associated_users": [
+    {
+      "first_name": "Guðrún",
+      "last_name": "Ósvífursdóttir",
+      "username": "gudrun"
+    },
+    {
+      "first_name": "Bárður",
+      "last_name": "Dumbsson",
+      "username": "bardur"
+    }
+  ],
+  "connected_users": [
+    "audur",
+    "bardur",
+    "gudrun"
+  ],
+  "contacts": [],
+  "created": "2014-09-17T13:41:24",
+  "created_by": "Guðrún Ósvífursdóttir",
+  "description": "",
+  "due_date": null,
+  "dynatype": {
+    "caption_plural": "dynatypes_labels:Programme_plural:",
+    "caption_singular": "dynatypes_labels:Programme_singular:",
+    "id": "4d3c323a-3d8c-11e4-a91b-b7c03192aa23"
+  },
+  "id": "513464e0-3e70-11e4-8e67-bb0c976204fc",
+  "identifier": "2014-10",
+  "modified": "2014-09-17T13:41:34",
+  "modified_by": null,
+  "resource_uri": "/api/v2/projects/513464e0-3e70-11e4-8e67-bb0c976204fc/",
+  "responsible_users": [
+    {
+      "first_name": "Auður",
+      "last_name": "Djúpauga",
+      "username": "audur"
+    }
+  ],
+  "space": {
+    "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+    "title": "Starfsmenn"
+  },
+  "status": "project_status:In_progress:",
+  "status_message": "derp",
+  "tags": [
+    "mannauður"
+  ],
+  "title": "Rýni á meginferli - Mannauður",
+  "type": "Project",
+  "version": "0.1"
+}

@@ -61,6 +61,33 @@ class CoredataClient:
         self.host = urljoin(host, '/api/v2/')
         self.headers = {'content-type': 'application/json'}
 
+    def edit(self, entity, id, payload, sync=True):
+        """
+        Edits a document
+        """
+        url = urljoin(self.host, entity.value)
+        url = urljoin(url, id)
+        params = {'sync': str(sync).lower()}
+        url = Utils.add_url_parameters(url, params)
+        r = requests.put(url, auth=self.auth, data=json.dumps(payload),
+                         headers=self.headers)
+        if r.status_code == 500:
+            error_message = r.json()['error_message']
+            raise Exception('Error! {error}'.format(error=error_message))
+
+    def delete(self, entity, id, sync=True):
+        """
+        Deletes a document
+        """
+        url = urljoin(self.host, entity.value)
+        url = urljoin(url, id)
+        params = {'sync': str(sync).lower()}
+        url = Utils.add_url_parameters(url, params)
+        r = requests.delete(url, auth=self.auth, headers=self.headers)
+        if r.status_code == 500:
+            error_message = r.json()['error_message']
+            raise Exception('Error! {error}'.format(error=error_message))
+
     def create(self, entity, payload, sync=True, fetch_entity=True):
         """
         Creates a new entity with the payload and returns the id of that
@@ -93,29 +120,29 @@ class CoredataClient:
             return url
 
     def get(self, entity, id=None, sub_entity=None, offset=0, limit=20,
-            search_terms=None):
+            search_terms=None, sync=True):
         """
         Gets all entities that fufill the given filtering if provided.
         """
         url = urljoin(self.host, entity.value)
         url = urljoin(url, id + '/') if id else url
         url = urljoin(url, sub_entity.value) if sub_entity else url
-        terms = {'offset': offset}
+        terms = {'sync': str(sync).lower()}
         if search_terms:
             terms.update(search_terms)
-        if limit:
-            terms.update({'limit': limit})
+        if not id:
+            terms.update({'limit': limit, 'offset': offset})
         url = Utils.add_url_parameters(url, terms)
-        # TODO: Abstract this one out and make recursive? generator?
         r = requests.get(url, auth=self.auth, headers=self.headers)
         if sub_entity == Entity.Content:
             return r.content
         elif r.ok:
             j = r.json()
 
-            # Sometimes you just get one object back with no meta info.
             if 'meta' not in j:
-                return [j]
+                # TODO: Fix error in API. No meta data returned when getting a
+                # single object.
+                return {'objects': [j]}
 
             if limit:
                 return j['objects']
