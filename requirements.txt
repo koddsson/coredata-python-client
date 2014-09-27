@@ -1,2 +1,2 @@
-PyYAML==3.11
 requests==2.4.1
+enum34==1.0

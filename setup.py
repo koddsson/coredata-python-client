@@ -15,6 +15,7 @@ setup(
     keywords = ['coredata'],
     classifiers = [],
     install_requires=[
-        'requests==2.3.0'
+        'requests==2.3.0',
+        'enum34==1.0'
     ],
 )
