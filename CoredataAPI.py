@@ -55,6 +55,7 @@ class CoredataClient:
     A thin wrapper for requests to talk to the CoreData API.
     """
     def __init__(self, host, auth):
+        # TODO: Parse the url rather than checking here.
         if 'http' not in host:
             raise ValueError('Missing scheme from host.')
         self.auth = auth

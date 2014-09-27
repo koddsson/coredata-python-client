@@ -1,12 +1,19 @@
 import httpretty
 
 from unittest import TestCase
+from nose.tools import raises
 from CoredataAPI import CoredataClient, Entity
+
+
+class TestAPI(TestCase):
+    @raises(ValueError)
+    def test_init(self):
+        CoredataClient(host='derp://example.coredata.is',
+                       auth=('username', 'password'))
 
 
 @httpretty.activate
 class TestProjects(TestCase):
-
     def test_editing_a_project(self):
         httpretty.register_uri(
             httpretty.GET,
