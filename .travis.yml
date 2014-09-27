@@ -5,6 +5,8 @@ python:
 install:
 - pip install -r requirements.txt
 - pip install coveralls
+- pip install httpretty
+- pip install nose
 after_success: coveralls
 script: nosetests  --with-coverage --cover-package=CoredataAPI
 deploy:
