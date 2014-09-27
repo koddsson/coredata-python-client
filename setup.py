@@ -5,13 +5,13 @@ from setuptools import setup
 setup(
     name='coredata',
     packages=['coredata'],
-    version='0.1.4',
+    version='0.1.5',
     description='A client to the Coredata API',
     author='Kristján Oddsson',
     author_email='koddsson@gmail.com',
     url='https://github.com/koddsson/coredata-python-client',
     download_url=('https://github.com/koddsson/coredata-python-client'
-                  '/tarball/0.1.4'),
+                  '/tarball/0.1.5'),
     keywords = ['coredata'],
     classifiers = [],
     install_requires=[
