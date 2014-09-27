@@ -15,4 +15,5 @@ deploy:
     secure: kCEigFigUQ543u6cSY9qbgutE0CetBmgDLp397L+LoJzVpYJX9EgGLNTmLNQ4se0ww27uSyDNkR+PPCkqNi3EYRY+bgFCTRchzSKCymI6Jr9nVLbNOxBinMvgxHmbIxPfuEjDDXLD4/Or5NbzpRAqv6TPVskqZq5nm7I8rXrhrw=
   on:
     tags: true
+    all_branches: true
     repo: koddsson/coredata-python-client
