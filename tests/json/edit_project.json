@@ -1,55 +1,34 @@
 {
   "aspects": {},
   "associated_contacts_id": [],
-  "associated_users": [
-    {
-      "first_name": "Guðrún",
-      "last_name": "Ósvífursdóttir",
-      "username": "gudrun"
-    },
-    {
-      "first_name": "Bárður",
-      "last_name": "Dumbsson",
-      "username": "bardur"
-    }
-  ],
+  "associated_users": [],
   "connected_users": [
-    "audur",
-    "bardur",
-    "gudrun"
+    "Administrator"
   ],
   "contacts": [],
-  "created": "2014-09-17T13:41:24",
-  "created_by": "Guðrún Ósvífursdóttir",
+  "created": "2014-09-16T10:26:40",
+  "created_by": null,
   "description": "",
-  "due_date": null,
+  "due_date": "2014-09-26",
   "dynatype": {
-    "caption_plural": "dynatypes_labels:Programme_plural:",
-    "caption_singular": "dynatypes_labels:Programme_singular:",
-    "id": "4d3c323a-3d8c-11e4-a91b-b7c03192aa23"
+    "caption_plural": "dynatypes_labels:Project_plural:",
+    "caption_singular": "dynatypes_labels:Project_singular:",
+    "id": "27d4c7b0-3d8b-11e4-8db3-d39b7a5394eb"
   },
-  "id": "513464e0-3e70-11e4-8e67-bb0c976204fc",
-  "identifier": "2014-10",
-  "modified": "2014-09-17T13:41:34",
+  "id": "f24203a0-3d8b-11e4-8e77-7ba23226dee9",
+  "identifier": "2014-1",
+  "modified": "2014-09-16T12:41:37",
   "modified_by": null,
-  "resource_uri": "/api/v2/projects/513464e0-3e70-11e4-8e67-bb0c976204fc/",
-  "responsible_users": [
-    {
-      "first_name": "Auður",
-      "last_name": "Djúpauga",
-      "username": "audur"
-    }
-  ],
+  "resource_uri": "/api/v2/projects/f24203a0-3d8b-11e4-8e77-7ba23226dee9/",
+  "responsible_users": [],
   "space": {
     "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
     "title": "Starfsmenn"
   },
-  "status": "project_status:In_progress:",
+  "status": "project_status:Pending:",
   "status_message": "derp",
-  "tags": [
-    "mannauður"
-  ],
-  "title": "Rýni á meginferli - Mannauður",
+  "tags": [],
+  "title": "Nýr starfmaður - Jón Jónsson",
   "type": "Project",
   "version": "0.1"
 }

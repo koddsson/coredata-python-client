@@ -19,7 +19,7 @@ TODO
   - dynatypes
   - files
   - nav
-  - projects (editing and creating).
+  - ~~projects~~
   - spaces
   - tasks
   - user
