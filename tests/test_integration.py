@@ -3,7 +3,7 @@ import httpretty
 
 from unittest import TestCase
 from nose.tools import raises
-from CoredataAPI import CoredataClient, Entity, CoredataError
+from coredata import CoredataClient, Entity, CoredataError
 
 
 @httpretty.activate
