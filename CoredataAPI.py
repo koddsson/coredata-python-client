@@ -166,15 +166,3 @@ class CoredataClient:
             raise Exception(
                 'Error occured! Status code is {code} for {url}'.format(
                     code=r.status_code, url=url))
-
-if __name__ == '__main__':
-    arguments = docopt(__doc__, version='Coredata Python Client 0.1')
-    host = arguments['--host']
-    auth = tuple(arguments['--auth'].split(':'))
-    client = CoredataClient(host, auth)
-    entity = Entity(arguments['<entity>'].lower() + '/')
-    if arguments['get']:
-        pprint(client.get(entity))
-    elif arguments['create']:
-        payload = json.loads(open(arguments['<file>']).read())
-        pprint(client.create(entity, payload, arguments['--sync']))
