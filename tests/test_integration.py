@@ -1,15 +1,30 @@
+import json
 import httpretty
 
 from unittest import TestCase
 from nose.tools import raises
-from CoredataAPI import CoredataClient, Entity
+from CoredataAPI import CoredataClient, Entity, CoredataError
 
 
+@httpretty.activate
 class TestAPI(TestCase):
     @raises(ValueError)
     def test_init(self):
         CoredataClient(host='derp://example.coredata.is',
                        auth=('username', 'password'))
+
+    @raises(CoredataError)
+    def test_error_handling(self):
+        httpretty.register_uri(
+            httpretty.GET,
+            "https://example.coredata.is/api/v2/projects/",
+            status=500,
+            body=json.dumps({'error_message': 'There was a error!'}),
+            content_type="application/json; charset=utf-8")
+        client = CoredataClient(host='https://example.coredata.is',
+                                auth=('username', 'password'))
+        r = client.get(Entity.Projects, '')
+        print r
 
 
 @httpretty.activate

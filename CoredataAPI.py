@@ -12,13 +12,12 @@ Options:
   --version     Show version.
   --sync        Make requests syncronus (default is async)
 """
-from docopt import docopt
+from docopt import docopt  # NOQA
 
 import json
 import requests
 
 from enum import Enum
-from pprint import pprint
 try:
     # Python3
     from urllib.parse import urlencode, urljoin, urlsplit, urlunsplit, parse_qs
@@ -26,6 +25,14 @@ except ImportError:
     # Python2
     from urllib import urlencode
     from urlparse import urljoin, urlsplit, urlunsplit, parse_qs
+
+
+class CoredataError(Exception):
+    """
+    Normally we don't want to define our own exceptions but this is the
+    exception. (get it?)
+    """
+    pass
 
 
 class Entity(Enum):
@@ -74,7 +81,7 @@ class CoredataClient:
                          headers=self.headers)
         if r.status_code == 500:
             error_message = r.json()['error_message']
-            raise Exception('Error! {error}'.format(error=error_message))
+            raise CoredataError('Error! {error}'.format(error=error_message))
 
     def delete(self, entity, id, sync=True):
         """
@@ -87,7 +94,7 @@ class CoredataClient:
         r = requests.delete(url, auth=self.auth, headers=self.headers)
         if r.status_code == 500:
             error_message = r.json()['error_message']
-            raise Exception('Error! {error}'.format(error=error_message))
+            raise CoredataError('Error! {error}'.format(error=error_message))
 
     def create(self, entity, payload, sync=True, fetch_entity=True):
         """
@@ -107,7 +114,7 @@ class CoredataClient:
 
         if r.status_code == 500:
             error_message = r.json()['error_message']
-            raise Exception('Error! {error}'.format(error=error_message))
+            raise CoredataError('Error! {error}'.format(error=error_message))
 
         # Fetch the location header from the response that contains the
         # endpoint for the newly created entity.
@@ -164,6 +171,6 @@ class CoredataClient:
 
             return j['objects']
         else:
-            raise Exception(
+            raise CoredataError(
                 'Error occured! Status code is {code} for {url}'.format(
                     code=r.status_code, url=url))
