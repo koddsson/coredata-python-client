@@ -1,0 +1,40 @@
+{
+  "aspects": {
+    "digitalsignature": {
+      "digital_signature": ""
+    }
+  },
+  "category": "main",
+  "created": "2014-09-17T13:58:37",
+  "created_by": "Guðrún Ósvífursdóttir",
+  "description": "",
+  "digest": "",
+  "dynatype": {
+    "caption_plural": "dynatypes_labels:File_plural:",
+    "caption_singular": "dynatypes_labels:File_singular:",
+    "id": "36f7da88-3e59-11e4-bea0-d3a429e2fd15"
+  },
+  "filename": "31_Strowd_June_Flood_Awareness.pdf",
+  "folder": null,
+  "id": "b8eb8454-3e72-11e4-b29d-a3f89222856b",
+  "mime_type": "application/pdf",
+  "modified": "2014-09-17T13:58:37",
+  "modified_by": null,
+  "owner": null,
+  "parent": "51638428-3e70-11e4-ab1b-63b012c73d96",
+  "project": {
+    "id": "513464e0-3e70-11e4-8e67-bb0c976204fc",
+    "identifier": "2014-10",
+    "title": "Rýni á meginferli - Mannauður"
+  },
+  "resource_uri": "/api/v2/files/b8eb8454-3e72-11e4-b29d-a3f89222856b/",
+  "size": 0,
+  "space": {
+    "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+    "title": "Starfsmenn"
+  },
+  "tags": [],
+  "title": "31_Strowd_June_Flood_Awareness",
+  "type": "File",
+  "version": "None.0"
+}

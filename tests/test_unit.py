@@ -228,7 +228,7 @@ class TestFiles(TestEntity):
         self.client.get(Entity.Files, '')
 
     def test_get_a_single_file(self):
-        file_id = 'TODO: GET A RANDOM UUID'
+        file_id = 'e634f784-3d8b-11e4-82a5-c3059141127e'
         httpretty.register_uri(
             httpretty.GET,
             self.create_url(Entity.Files, file_id),
@@ -243,23 +243,25 @@ class TestFiles(TestEntity):
             self.create_url(Entity.Files),
             responses=[
                 httpretty.Response(
-                    body=open('tests/json/get_files.json').read()),
+                    body=open('tests/json/get_files1.json').read()),
+                httpretty.Response(
+                    body=open('tests/json/get_files2.json').read()),
                 httpretty.Response(
                     body=open('tests/json/get_files_last.json').read()),
             ],
             content_type="application/json; charset=utf-8")
         r = self.client.get(Entity.Files)
-        self.assertEqual(len(r), 24)
+        self.assertEqual(len(r), 44)
 
     def test_getting_files_with_filtering(self):
         httpretty.register_uri(
             httpretty.GET,
             self.create_url(Entity.Files),
-            body=open('tests/json/get_files.json').read(),
+            body=open('tests/json/get_files_filtering.json').read(),
             content_type="application/json; charset=utf-8")
         r = self.client.get(
             Entity.Files, search_terms={'title__startswith': 'Y'})
-        self.assertEqual(len(r), 1)
+        self.assertEqual(len(r), 6)
 
     def test_editing_a_file(self):
         file_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
@@ -280,7 +282,7 @@ class TestFiles(TestEntity):
             content_type="application/json; charset=utf-8")
         files = self.client.get(Entity.Files, file_id)
         self.assertEqual(len(files['objects']), 1)
-        files['objects'][0]['status_message'] = 'derp'
+        files['objects'][0]['title'] = 'All your base are belong to us'
         self.client.edit(Entity.Files, file_id, files['objects'][0])
         edited_file = self.client.get(Entity.Files, file_id)
         self.assertEqual(files, edited_file)
