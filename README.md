@@ -1,27 +1,37 @@
-coredata-python-client
-======================
-![travis build](https://travis-ci.org/koddsson/coredata-python-client.svg?branch=master)
+Coredata Python API Client
+==========================
+[![travis build](https://travis-ci.org/koddsson/coredata-python-client.svg?branch=master)](https://travis-ci.org/koddsson/coredata-python-client)
 [![Coverage Status](https://img.shields.io/coveralls/koddsson/coredata-python-client.svg)](https://coveralls.io/r/koddsson/coredata-python-client)
 
-A python client for the Coredata REST API.
+A Python 2/3 client for the Coredata REST API.
 
-This probably needs a whole bit of work but I can get and create entities and
-works for me right now :)
 
-Feel free to point out issues and/or submit pull requests.
+Testing
+-------
+Currently only have unittests which can be transformed into integration test by
+disabling httpretty when running them. The integration tests have yet to be run
+against a server so expect there to be errors.
+
+
+Contributing
+------------
+Feel free to file issues or pull requests if there is something you need or if
+something is breaking. You can also get me on
+[twitter](https://twitter.com/koddsson).
 
 TODO
 ----
 - Add tests for:
+  - valuelists
+  - dynatypes
   - comments
   - contacts
-  - docs
-  - dynatypes
-  - files
-  - nav
-  - ~~projects~~
   - spaces
   - tasks
-  - user
   - users
-  - valuelists
+  - user
+  - docs
+  - nav
+  - ~~projects~~
+  - ~~files~~
+- Run integration tests against a running server.
