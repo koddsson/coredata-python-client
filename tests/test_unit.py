@@ -16,6 +16,9 @@ class TestAPI(TestCase):
 
 @httpretty.activate
 class TestProjects(TestCase):
+    """
+    Unit tests for /projects/ endpoint.
+    """
     @raises(CoredataError)
     def test_get_project_error(self):
         httpretty.register_uri(
@@ -34,7 +37,7 @@ class TestProjects(TestCase):
             httpretty.GET,
             ('https://example.coredata.is/api/v2/'
              'projects/{id}/?sync=true'.format(id=project_id)),
-            body=open('json/get_single_project.json').read(),
+            body=open('tests/json/get_single_project.json').read(),
             content_type="application/json; charset=utf-8")
         client = CoredataClient(
             host='https://example.coredata.is', auth=('username', 'password'))
@@ -47,9 +50,9 @@ class TestProjects(TestCase):
             "https://example.coredata.is/api/v2/projects/",
             responses=[
                 httpretty.Response(
-                    body=open('json/get_projects.json').read()),
+                    body=open('tests/json/get_projects.json').read()),
                 httpretty.Response(
-                    body=open('json/get_projects_last.json').read()),
+                    body=open('tests/json/get_projects_last.json').read()),
             ],
             content_type="application/json; charset=utf-8")
         client = CoredataClient(
@@ -61,7 +64,7 @@ class TestProjects(TestCase):
         httpretty.register_uri(
             httpretty.GET,
             "https://example.coredata.is/api/v2/projects/",
-            body=open('json/get_projects_filtered.json').read(),
+            body=open('tests/json/get_projects_filtered.json').read(),
             content_type="application/json; charset=utf-8")
         client = CoredataClient(
             host='https://example.coredata.is', auth=('username', 'password'))
@@ -78,9 +81,9 @@ class TestProjects(TestCase):
             project_url,
             responses=[
                 httpretty.Response(
-                    body=open('json/get_single_project.json').read()),
+                    body=open('tests/json/get_single_project.json').read()),
                 httpretty.Response(
-                    body=open('json/edit_project.json').read()),
+                    body=open('tests/json/edit_project.json').read()),
             ],
             content_type="application/json; charset=utf-8")
         httpretty.register_uri(
@@ -103,7 +106,7 @@ class TestProjects(TestCase):
         httpretty.register_uri(
             httpretty.GET,
             project_url,
-            body=open('json/get_single_project.json').read(),
+            body=open('tests/json/get_single_project.json').read(),
             content_type="application/json; charset=utf-8")
         httpretty.register_uri(
             httpretty.PUT, project_url, status=500,
@@ -154,7 +157,7 @@ class TestProjects(TestCase):
             body=json.dumps({'error_message': '#wontfix'}),
             location=project_url,
             content_type="application/json; charset=utf-8")
-        data = open('json/get_single_project.json').read()
+        data = open('tests/json/get_single_project.json').read()
         httpretty.register_uri(
             httpretty.GET,
             project_url,
@@ -194,6 +197,9 @@ class TestProjects(TestCase):
 
 @httpretty.activate
 class TestFiles(TestCase):
+    """
+    Unit tests for /files/ endpoint.
+    """
     def test_getting_content(self):
         file_id = '4ab3bb32-3e72-11e4-bfaa-ebeae41148db'
         file_url = ('https://example.coredata.is'
@@ -235,7 +241,7 @@ class TestFiles(TestCase):
             httpretty.GET,
             'https://example.coredata.is/api/v2/files/{id}/?sync=true'.format(
                 id=file_id),
-            body=open('json/get_single_file.json').read(),
+            body=open('tests/json/get_single_file.json').read(),
             content_type="application/json; charset=utf-8")
         client = CoredataClient(host='https://example.coredata.is',
                                 auth=('username', 'password'))
@@ -249,9 +255,9 @@ class TestFiles(TestCase):
             "https://example.coredata.is/api/v2/files/",
             responses=[
                 httpretty.Response(
-                    body=open('json/get_files.json').read()),
+                    body=open('tests/json/get_files.json').read()),
                 httpretty.Response(
-                    body=open('json/get_files_last.json').read()),
+                    body=open('tests/json/get_files_last.json').read()),
             ],
             content_type="application/json; charset=utf-8")
         client = CoredataClient(
@@ -264,7 +270,7 @@ class TestFiles(TestCase):
         httpretty.register_uri(
             httpretty.GET,
             "https://example.coredata.is/api/v2/files/",
-            body=open('json/get_files.json').read(),
+            body=open('tests/json/get_files.json').read(),
             content_type="application/json; charset=utf-8")
         client = CoredataClient(
             host='https://example.coredata.is',
@@ -281,9 +287,9 @@ class TestFiles(TestCase):
                 id=file_id),
             responses=[
                 httpretty.Response(
-                    body=open('json/get_single_file.json').read()),
+                    body=open('tests/json/get_single_file.json').read()),
                 httpretty.Response(
-                    body=open('json/edit_file.json').read())
+                    body=open('tests/json/edit_file.json').read())
             ],
             content_type="application/json; charset=utf-8")
         httpretty.register_uri(
@@ -310,7 +316,7 @@ class TestFiles(TestCase):
             httpretty.GET,
             'https://example.coredata.is/api/v2/files/{id}/?sync=true'.format(
                 id=file_id),
-            body=open('json/get_single_file.json').read(),
+            body=open('tests/json/get_single_file.json').read(),
             content_type="application/json; charset=utf-8")
         httpretty.register_uri(
             httpretty.PUT,
@@ -364,7 +370,7 @@ class TestFiles(TestCase):
             body=json.dumps({'error_message': '#wontfix'}),
             location=file_url,
             content_type="application/json; charset=utf-8")
-        data = open('json/get_single_file.json').read()
+        data = open('tests/json/get_single_file.json').read()
         httpretty.register_uri(
             httpretty.GET, file_url, body=data,
             content_type="application/json; charset=utf-8")
