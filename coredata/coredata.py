@@ -96,7 +96,7 @@ class CoredataClient:
             error_message = r.json()['error_message']
             raise CoredataError('Error! {error}'.format(error=error_message))
 
-    def create(self, entity, payload, sync=True, fetch_entity=True):
+    def create(self, entity, payload, sync=True):
         """
         Creates a new entity with the payload and returns the id of that
         new entity in the API.
@@ -116,21 +116,14 @@ class CoredataClient:
             error_message = r.json()['error_message']
             raise CoredataError('Error! {error}'.format(error=error_message))
 
-        # Fetch the location header from the response that contains the
-        # endpoint for the newly created entity.
-        url = r.headers['location']
-        if sync and fetch_entity:
-            # We get the entity from location if requested and return it
-            return requests.get(
-                url, auth=self.auth, headers=self.headers).json()
-        else:
-            # Otherwise just return the location of the element.
-            return url
+        return r.headers['location'].rsplit('/', 1)[1]
 
     def get(self, entity, id=None, sub_entity=None, offset=0, limit=20,
             search_terms=None, sync=True):
         """
         Gets all entities that fufill the given filtering if provided.
+
+        :todo: Rename search_terms
         """
         url = urljoin(self.host, entity.value)
         url = urljoin(url, id + '/') if id else url
