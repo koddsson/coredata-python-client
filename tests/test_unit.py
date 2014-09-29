@@ -25,10 +25,12 @@ class TestEntity(TestCase):
             host=self.host, auth=(self.username, self.password))
         super(TestEntity, self).__init__(test_name)
 
-    def create_url(self, entity, id=None):
+    def create_url(self, entity, id=None, sub_entity=None):
         url = self.url.format(host=self.host, entity=entity.value)
         if id:
             url += id + '/'
+        if sub_entity:
+            url += sub_entity.value
         return url
 
 
@@ -191,30 +193,27 @@ class TestProjects(TestEntity):
 
 
 @httpretty.activate
-class TestFiles(TestCase):
+class TestFiles(TestEntity):
     """
     Unit tests for /files/ endpoint.
     """
     def test_getting_content(self):
         file_id = '4ab3bb32-3e72-11e4-bfaa-ebeae41148db'
-        file_url = ('https://example.coredata.is'
-                    '/api/v2/files/{id}/content/?sync=true'.format(
-                        id=file_id))
         # TODO: There is a better way to do this.
         try:
             # Python 3
             returned_content = open(
-                'files/get_file', encoding='latin-1').read()
+                'tests/files/get_file', encoding='latin-1').read()
         except TypeError:
             # Python 2
-            returned_content = open('files/get_file').read()
+            returned_content = open('tests/files/get_file').read()
         httpretty.register_uri(
-            httpretty.GET, file_url, body=returned_content
+            httpretty.GET,
+            self.create_url(Entity.Files, file_id, Entity.Content),
+            body=returned_content
         )
 
-        client = CoredataClient(host='https://example.coredata.is',
-                                auth=('username', 'password'))
-        content = client.get(Entity.Files, file_id, Entity.Content)
+        content = self.client.get(Entity.Files, file_id, Entity.Content)
         self.assertEqual(content, returned_content)
 
     @raises(CoredataError)
@@ -222,32 +221,26 @@ class TestFiles(TestCase):
         # TODO: Assert error message
         httpretty.register_uri(
             httpretty.GET,
-            "https://example.coredata.is/api/v2/files/",
+            self.create_url(Entity.Files),
             status=500,
             body=json.dumps({'error_message': 'There was a error!'}),
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(host='https://example.coredata.is',
-                                auth=('username', 'password'))
-        client.get(Entity.Files, '')
+        self.client.get(Entity.Files, '')
 
     def test_get_a_single_file(self):
         file_id = 'TODO: GET A RANDOM UUID'
         httpretty.register_uri(
             httpretty.GET,
-            'https://example.coredata.is/api/v2/files/{id}/?sync=true'.format(
-                id=file_id),
+            self.create_url(Entity.Files, file_id),
             body=open('tests/json/get_single_file.json').read(),
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(host='https://example.coredata.is',
-                                auth=('username', 'password'))
-        projects = client.get(
-            Entity.Files, file_id)
+        projects = self.client.get(Entity.Files, file_id)
         self.assertEqual(len(projects['objects']), 1)
 
     def test_getting_all_files(self):
         httpretty.register_uri(
             httpretty.GET,
-            "https://example.coredata.is/api/v2/files/",
+            self.create_url(Entity.Files),
             responses=[
                 httpretty.Response(
                     body=open('tests/json/get_files.json').read()),
@@ -255,22 +248,16 @@ class TestFiles(TestCase):
                     body=open('tests/json/get_files_last.json').read()),
             ],
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is',
-            auth=('username', 'password'))
-        r = client.get(Entity.Files)
+        r = self.client.get(Entity.Files)
         self.assertEqual(len(r), 24)
 
     def test_getting_files_with_filtering(self):
         httpretty.register_uri(
             httpretty.GET,
-            "https://example.coredata.is/api/v2/files/",
+            self.create_url(Entity.Files),
             body=open('tests/json/get_files.json').read(),
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is',
-            auth=('username', 'password'))
-        r = client.get(
+        r = self.client.get(
             Entity.Files, search_terms={'title__startswith': 'Y'})
         self.assertEqual(len(r), 1)
 
@@ -278,8 +265,7 @@ class TestFiles(TestCase):
         file_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
         httpretty.register_uri(
             httpretty.GET,
-            'https://example.coredata.is/api/v2/files/{id}/?sync=true'.format(
-                id=file_id),
+            self.create_url(Entity.Files, file_id),
             responses=[
                 httpretty.Response(
                     body=open('tests/json/get_single_file.json').read()),
@@ -289,18 +275,14 @@ class TestFiles(TestCase):
             content_type="application/json; charset=utf-8")
         httpretty.register_uri(
             httpretty.PUT,
-            'https://example.coredata.is/api/v2/files/{id}?sync=true'.format(
-                id=file_id),
+            self.create_url(Entity.Files, file_id),
             status=204,
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        files = client.get(Entity.Files, file_id)
+        files = self.client.get(Entity.Files, file_id)
         self.assertEqual(len(files['objects']), 1)
         files['objects'][0]['status_message'] = 'derp'
-        client.edit(
-            Entity.Files, file_id, files['objects'][0])
-        edited_file = client.get(Entity.Files, file_id)
+        self.client.edit(Entity.Files, file_id, files['objects'][0])
+        edited_file = self.client.get(Entity.Files, file_id)
         self.assertEqual(files, edited_file)
 
     @raises(CoredataError)
@@ -309,23 +291,19 @@ class TestFiles(TestCase):
         file_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
         httpretty.register_uri(
             httpretty.GET,
-            'https://example.coredata.is/api/v2/files/{id}/?sync=true'.format(
-                id=file_id),
+            self.create_url(Entity.Files, file_id),
             body=open('tests/json/get_single_file.json').read(),
             content_type="application/json; charset=utf-8")
         httpretty.register_uri(
             httpretty.PUT,
-            'https://example.coredata.is/api/v2/files/{id}?sync=true'.format(
-                id=file_id),
+            self.create_url(Entity.Files, file_id),
             status=500,
             body=json.dumps({'error_message': 'You can\'t do that'}),
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        files = client.get(Entity.Files, file_id)
+        files = self.client.get(Entity.Files, file_id)
         self.assertEqual(len(files['objects']), 1)
         files['objects'][0]['status_message'] = 'derp'
-        client.edit(Entity.Files, file_id, files['objects'][0])
+        self.client.edit(Entity.Files, file_id, files['objects'][0])
 
     @raises(CoredataError)
     def test_deleting_a_file_error(self):
@@ -333,25 +311,19 @@ class TestFiles(TestCase):
         file_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
         httpretty.register_uri(
             httpretty.DELETE,
-            'https://example.coredata.is/api/v2/files/{id}?sync=true'.format(
-                id=file_id),
+            self.create_url(Entity.Files, file_id),
             status=500,
             body=json.dumps({'error_message': 'No way, Jose'}),
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        client.delete(Entity.Files, file_id)
+        self.client.delete(Entity.Files, file_id)
 
     def test_deleting_a_file(self):
         file_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
         httpretty.register_uri(
             httpretty.DELETE,
-            'https://example.coredata.is/api/v2/files/{id}?sync=true'.format(
-                id=file_id),
+            self.create_url(Entity.Files, file_id),
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        client.delete(Entity.Files, file_id)
+        self.client.delete(Entity.Files, file_id)
         # TODO. Assert is deleted.
 
     @raises(CoredataError)
@@ -360,7 +332,7 @@ class TestFiles(TestCase):
         file_url = 'http://example.coredata.is/doc/{id}'.format(id=file_id)
         httpretty.register_uri(
             httpretty.POST,
-            "https://example.coredata.is/api/v2/files/?sync=true",
+            self.create_url(Entity.Files),
             status=500,
             body=json.dumps({'error_message': '#wontfix'}),
             location=file_url,
@@ -375,9 +347,7 @@ class TestFiles(TestCase):
             "title": "Dis is a file title"
         }
 
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        r = client.create(Entity.Files, payload)
+        r = self.client.create(Entity.Files, payload)
         # TODO: I don't ever get here, do I?
         self.assertEqual(r['id'], 'f24203a0-3d8b-11e4-8e77-7ba23226dee9')
 
@@ -387,7 +357,7 @@ class TestFiles(TestCase):
             id=file_id)
         httpretty.register_uri(
             httpretty.POST,
-            "https://example.coredata.is/api/v2/files/?sync=true",
+            self.create_url(Entity.Files),
             status=201,
             location=file_url,
             content_type="application/json; charset=utf-8")
@@ -396,7 +366,5 @@ class TestFiles(TestCase):
             "title": "Dis is a file created from the API"
         }
 
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        id = client.create(Entity.Files, payload)
+        id = self.client.create(Entity.Files, payload)
         self.assertEqual(id, file_id)
