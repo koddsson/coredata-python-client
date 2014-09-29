@@ -206,7 +206,8 @@ class TestFiles(TestCase):
         file_url = ('https://example.coredata.is'
                     '/api/v2/files/{id}/content/?sync=true'.format(
                         id=file_id))
-        returned_content = open('tests/files/get_file').read()
+        returned_content = open(
+            'tests/files/get_file', encoding='latin-1').read()
         httpretty.register_uri(
             httpretty.GET, file_url, body=returned_content
         )
