@@ -197,3 +197,21 @@ class TestProjects(TestCase):
                                 auth=('username', 'password'))
         id = client.create(Entity.Projects, payload)
         self.assertEqual(id, project_id)
+
+
+@httpretty.activate
+class TestFiles(TestCase):
+    def test_getting_content(self):
+        file_id = '4ab3bb32-3e72-11e4-bfaa-ebeae41148db'
+        file_url = ('https://example.coredata.is'
+                    '/api/v2/files/{id}/content/?sync=true'.format(
+                        id=file_id))
+        returned_content = open('tests/files/get_file').read()
+        httpretty.register_uri(
+            httpretty.GET, file_url, body=returned_content
+        )
+
+        client = CoredataClient(host='https://example.coredata.is',
+                                auth=('username', 'password'))
+        content = client.get(Entity.Files, file_id, Entity.Content)
+        self.assertEqual(content, returned_content)
