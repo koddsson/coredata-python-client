@@ -74,7 +74,7 @@ class CoredataClient:
         Edits a document
         """
         url = urljoin(self.host, entity.value)
-        url = urljoin(url, id)
+        url = urljoin(url, id + '/')
         params = {'sync': str(sync).lower()}
         url = Utils.add_url_parameters(url, params)
         r = requests.put(url, auth=self.auth, data=json.dumps(payload),
