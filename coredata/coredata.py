@@ -88,7 +88,7 @@ class CoredataClient:
         Deletes a document
         """
         url = urljoin(self.host, entity.value)
-        url = urljoin(url, id)
+        url = urljoin(url, id + '/')
         params = {'sync': str(sync).lower()}
         url = Utils.add_url_parameters(url, params)
         r = requests.delete(url, auth=self.auth, headers=self.headers)

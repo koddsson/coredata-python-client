@@ -10,12 +10,30 @@ from coredata import CoredataClient, Entity, CoredataError
 class TestAPI(TestCase):
     @raises(ValueError)
     def test_init(self):
-        CoredataClient(host='derp://example.coredata.is',
-                       auth=('username', 'password'))
+        CoredataClient(
+            host='derp://example.coredata.is', auth=('username', 'password'))
+
+
+class TestEntity(TestCase):
+    username = 'username'
+    password = 'password'
+    host = 'https://example.coredata.is'
+    url = '{host}/api/v2/{entity}'
+
+    def __init__(self, test_name):
+        self.client = CoredataClient(
+            host=self.host, auth=(self.username, self.password))
+        super(TestEntity, self).__init__(test_name)
+
+    def create_url(self, entity, id=None):
+        url = self.url.format(host=self.host, entity=entity.value)
+        if id:
+            url += id + '/'
+        return url
 
 
 @httpretty.activate
-class TestProjects(TestCase):
+class TestProjects(TestEntity):
     """
     Unit tests for /projects/ endpoint.
     """
@@ -23,31 +41,26 @@ class TestProjects(TestCase):
     def test_get_project_error(self):
         httpretty.register_uri(
             httpretty.GET,
-            "https://example.coredata.is/api/v2/projects/",
+            self.create_url(Entity.Projects),
             status=500,
             body=json.dumps({'error_message': 'There was a error!'}),
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        client.get(Entity.Projects, '')
+        self.client.get(Entity.Projects, '')
 
     def test_get_a_single_project(self):
         project_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
         httpretty.register_uri(
             httpretty.GET,
-            ('https://example.coredata.is/api/v2/'
-             'projects/{id}/?sync=true'.format(id=project_id)),
+            self.create_url(Entity.Projects, project_id),
             body=open('tests/json/get_single_project.json').read(),
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        projects = client.get(Entity.Projects, project_id)
+        projects = self.client.get(Entity.Projects, project_id)
         self.assertEqual(len(projects['objects']), 1)
 
     def test_getting_all_projects(self):
         httpretty.register_uri(
             httpretty.GET,
-            "https://example.coredata.is/api/v2/projects/",
+            self.create_url(Entity.Projects),
             responses=[
                 httpretty.Response(
                     body=open('tests/json/get_projects.json').read()),
@@ -55,30 +68,24 @@ class TestProjects(TestCase):
                     body=open('tests/json/get_projects_last.json').read()),
             ],
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        r = client.get(Entity.Projects)
+        r = self.client.get(Entity.Projects)
         self.assertEqual(len(r), 27)
 
     def test_getting_projects_with_filtering(self):
         httpretty.register_uri(
             httpretty.GET,
-            "https://example.coredata.is/api/v2/projects/",
+            self.create_url(Entity.Projects),
             body=open('tests/json/get_projects_filtered.json').read(),
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        r = client.get(
+        r = self.client.get(
             Entity.Projects, search_terms={'title__startswith': 'Y'})
         self.assertEqual(len(r), 1)
 
     def test_editing_a_project(self):
         project_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
-        project_url = ('https://example.coredata.is/api/v2/projects/'
-                       '{id}/?sync=true'.format(id=project_id))
         httpretty.register_uri(
             httpretty.GET,
-            project_url,
+            self.create_url(Entity.Projects, project_id),
             responses=[
                 httpretty.Response(
                     body=open('tests/json/get_single_project.json').read()),
@@ -87,62 +94,54 @@ class TestProjects(TestCase):
             ],
             content_type="application/json; charset=utf-8")
         httpretty.register_uri(
-            httpretty.PUT, project_url, status=204,
+            httpretty.PUT,
+            self.create_url(Entity.Projects, project_id),
+            status=204,
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        projects = client.get(Entity.Projects, project_id)
+        projects = self.client.get(Entity.Projects, project_id)
         self.assertEqual(len(projects['objects']), 1)
         projects['objects'][0]['status_message'] = 'derp'
-        client.edit(Entity.Projects, project_id, projects['objects'][0])
-        edited_project = client.get(Entity.Projects, project_id)
+        self.client.edit(Entity.Projects, project_id, projects['objects'][0])
+        edited_project = self.client.get(Entity.Projects, project_id)
         self.assertEqual(projects, edited_project)
 
     @raises(CoredataError)
     def test_editing_a_project_error(self):
         project_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
-        project_url = ('https://example.coredata.is/api/v2/'
-                       'projects/{id}/?sync=true'.format(id=project_id))
         httpretty.register_uri(
             httpretty.GET,
-            project_url,
+            self.create_url(Entity.Projects, project_id),
             body=open('tests/json/get_single_project.json').read(),
             content_type="application/json; charset=utf-8")
         httpretty.register_uri(
-            httpretty.PUT, project_url, status=500,
+            httpretty.PUT,
+            self.create_url(Entity.Projects, project_id),
+            status=500,
             body=json.dumps({'error_message': 'You can\'t do that'}),
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        projects = client.get(Entity.Projects, project_id)
+        projects = self.client.get(Entity.Projects, project_id)
         self.assertEqual(len(projects['objects']), 1)
         projects['objects'][0]['status_message'] = 'derp'
-        client.edit(Entity.Projects, project_id, projects['objects'][0])
+        self.client.edit(Entity.Projects, project_id, projects['objects'][0])
 
     @raises(CoredataError)
     def test_deleting_a_project_error(self):
         project_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
-        project_url = ('https://example.coredata.is/api/v2/projects/'
-                       '{id}?sync=true'.format(id=project_id))
         httpretty.register_uri(
-            httpretty.DELETE, project_url, status=500,
+            httpretty.DELETE,
+            self.create_url(Entity.Projects, project_id),
+            status=500,
             body=json.dumps({'error_message': 'No way, Jose'}),
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        client.delete(Entity.Projects, project_id)
+        self.client.delete(Entity.Projects, project_id)
 
     def test_deleting_a_project(self):
         project_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
-        project_url = ('https://example.coredata.is/api/v2/projects/'
-                       '{id}?sync=true'.format(id=project_id))
         httpretty.register_uri(
             httpretty.DELETE,
-            project_url,
+            self.create_url(Entity.Projects, project_id),
             content_type="application/json; charset=utf-8")
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        client.delete(Entity.Projects, project_id)
+        self.client.delete(Entity.Projects, project_id)
         # TODO. Assert is deleted.
 
     @raises(CoredataError)
@@ -152,7 +151,7 @@ class TestProjects(TestCase):
                        '9b4f8e70-45bd-11e4-a183-164230d1df67')
         httpretty.register_uri(
             httpretty.POST,
-            "https://example.coredata.is/api/v2/projects/?sync=true",
+            self.create_url(Entity.Projects),
             status=500,
             body=json.dumps({'error_message': '#wontfix'}),
             location=project_url,
@@ -168,9 +167,7 @@ class TestProjects(TestCase):
             "title": "Super important thing"
         }
 
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        r = client.create(Entity.Projects, payload)
+        r = self.client.create(Entity.Projects, payload)
         # TODO: I don't ever get here, do I?
         self.assertEqual(r['id'], 'f24203a0-3d8b-11e4-8e77-7ba23226dee9')
 
@@ -180,7 +177,7 @@ class TestProjects(TestCase):
             id=project_id)
         httpretty.register_uri(
             httpretty.POST,
-            "https://example.coredata.is/api/v2/projects/?sync=true",
+            self.create_url(Entity.Projects),
             status=201,
             location=project_url,
             content_type="application/json; charset=utf-8")
@@ -189,9 +186,7 @@ class TestProjects(TestCase):
             "title": "Super important thing"
         }
 
-        client = CoredataClient(
-            host='https://example.coredata.is', auth=('username', 'password'))
-        id = client.create(Entity.Projects, payload)
+        id = self.client.create(Entity.Projects, payload)
         self.assertEqual(id, project_id)
 
 
