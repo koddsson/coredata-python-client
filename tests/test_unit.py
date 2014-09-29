@@ -200,13 +200,7 @@ class TestFiles(TestEntity):
     def test_getting_content(self):
         file_id = '4ab3bb32-3e72-11e4-bfaa-ebeae41148db'
         # TODO: There is a better way to do this.
-        try:
-            # Python 3
-            returned_content = open(
-                'tests/files/get_file', encoding='latin-1').read()
-        except TypeError:
-            # Python 2
-            returned_content = open('tests/files/get_file').read()
+        returned_content = open('tests/files/get_file', 'rb').read()
         httpretty.register_uri(
             httpretty.GET,
             self.create_url(Entity.Files, file_id, Entity.Content),
