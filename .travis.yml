@@ -1,14 +1,17 @@
 language: python
 python:
-- '2.7'
-- '3.4'
+  - '2.7'
+  - '3.4'
 install:
-- pip install -r requirements.txt
-- pip install coveralls
-- pip install httpretty
-- pip install nose
+  - pip install -r requirements.txt
+  - pip install coveralls
+  - pip install httpretty
+  - pip install nose
+  - pip install pep8
 after_success: coveralls
-script: nosetests  --with-coverage --cover-package=coredata
+script:
+  - pep8 coredata
+  - nosetests  --with-coverage --cover-package=coredata
 deploy:
   provider: pypi
   user: koddsson
