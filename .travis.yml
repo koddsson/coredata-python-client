@@ -8,9 +8,11 @@ install:
   - pip install httpretty
   - pip install nose
   - pip install pep8
+  - pip install pep257
 after_success: coveralls
 script:
   - pep8 coredata
+  - pep257
   - nosetests  --with-coverage --cover-package=coredata
 deploy:
   provider: pypi
