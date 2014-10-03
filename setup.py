@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # # coding: utf-8
+
+"""The setup for the package."""
+
 from setuptools import setup
 
 setup(

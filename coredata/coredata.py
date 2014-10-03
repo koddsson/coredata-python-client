@@ -1,5 +1,5 @@
 """
-Coredata API Python Client
+Coredata API Python Client.
 
 Usage:
   coredata_api.py create <entity> <file> --host=<host> --auth=<auth> [--sync]
@@ -28,14 +28,16 @@ except ImportError:
 
 
 class CoredataError(Exception):
-    """
-    Normally we don't want to define our own exceptions but this is the
-    exception. (get it?)
-    """
+
+    """ A custom error that are thrown when Coredata makes a bobo. """
+
     pass
 
 
 class Entity(Enum):
+
+    """ A list of Coredata endpoints listed as a enumerate. """
+
     Comments = 'comments/'
     Projects = 'projects/'
     Contacts = 'contacts/'
@@ -50,8 +52,16 @@ class Entity(Enum):
 
 
 class Utils:
+
+    """
+    Helper functions for Coredata.
+
+    :todo: Remove this because of reasons.
+    """
+
     @staticmethod
     def add_url_parameters(url, parameters):
+        """ Add url parameters to URL. """
         scheme, netloc, path, query_string, fragment = urlsplit(url)
         query = parse_qs(query_string)
         query.update(parameters)
@@ -59,10 +69,11 @@ class Utils:
 
 
 class CoredataClient:
-    """
-    A thin wrapper for requests to talk to the CoreData API.
-    """
+
+    """ A thin wrapper for requests to talk to the CoreData API. """
+
     def __init__(self, host, auth):
+        """ Initialize the Coredata client. """
         # TODO: Parse the url rather than checking here.
         if 'http' not in host:
             raise ValueError('Missing scheme from host.')
@@ -71,9 +82,7 @@ class CoredataClient:
         self.headers = {'content-type': 'application/json'}
 
     def edit(self, entity, id, payload, sync=True):
-        """
-        Edits a document
-        """
+        """ Edit a document. """
         url = urljoin(self.host, entity.value)
         url = urljoin(url, id + '/')
         params = {'sync': str(sync).lower()}
@@ -85,9 +94,7 @@ class CoredataClient:
             raise CoredataError('Error! {error}'.format(error=error_message))
 
     def delete(self, entity, id, sync=True):
-        """
-        Deletes a document
-        """
+        """ Delete a document. """
         url = urljoin(self.host, entity.value)
         url = urljoin(url, id + '/')
         params = {'sync': str(sync).lower()}
@@ -98,10 +105,7 @@ class CoredataClient:
             raise CoredataError('Error! {error}'.format(error=error_message))
 
     def create(self, entity, payload, sync=True):
-        """
-        Creates a new entity with the payload and returns the id of that
-        new entity in the API.
-        """
+        """ Create a new entity with the payload and return id of it. """
         url = urljoin(self.host, entity.value)
 
         # Append the sync parameter to the URL
@@ -122,7 +126,7 @@ class CoredataClient:
     def get(self, entity, id=None, sub_entity=None, offset=0, limit=20,
             search_terms=None, sync=True):
         """
-        Gets all entities that fufill the given filtering if provided.
+        Get all entities that fufill the given filtering if provided.
 
         :todo: Rename search_terms
         """
