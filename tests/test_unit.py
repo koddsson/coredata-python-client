@@ -364,3 +364,91 @@ class TestFiles(TestEntity):
 
         id = self.client.create(Entity.Files, payload)
         self.assertEqual(id, file_id)
+
+
+@httpretty.activate
+class TestComments(TestEntity):
+    def test_getting_all_comments(self):
+        httpretty.register_uri(
+            httpretty.GET,
+            self.create_url(Entity.Comments),
+            body=open('tests/json/none.json').read(),
+            content_type="application/json; charset=utf-8")
+        r = self.client.get(Entity.Comments)
+        self.assertEqual(len(r), 0)
+
+    @raises(CoredataError)
+    def test_getting_all_comments_error(self):
+        # TODO: Assert error message
+        httpretty.register_uri(
+            httpretty.GET,
+            self.create_url(Entity.Comments),
+            status=500,
+            body=json.dumps({'error_message': 'There was a error!'}),
+            content_type="application/json; charset=utf-8")
+        self.client.get(Entity.Comments, '')
+
+    def test_creating_a_comment(self):
+        comment_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
+        comment_url = 'http://example.coredata.is/doc/{id}'.format(
+            id=comment_id)
+        httpretty.register_uri(
+            httpretty.POST,
+            self.create_url(Entity.Comments),
+            status=201,
+            location=comment_url,
+            content_type="application/json; charset=utf-8")
+        payload = {
+            "space": "TODO: Get a UUID here",
+            "title": "Dis is a comment created from the API"
+        }
+
+        id = self.client.create(Entity.Comments, payload)
+        self.assertEqual(id, comment_id)
+
+    @raises(CoredataError)
+    def test_creating_a_comment_error(self):
+        comment_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
+        comment_url = 'http://example.coredata.is/doc/{id}'.format(
+            id=comment_id)
+        httpretty.register_uri(
+            httpretty.POST,
+            self.create_url(Entity.Comments),
+            status=500,
+            body=json.dumps({'error_message': '#wontfix'}),
+            location=comment_url,
+            content_type="application/json; charset=utf-8")
+        data = open('tests/json/get_single_comment.json').read()
+        httpretty.register_uri(
+            httpretty.GET, comment_url, body=data,
+            content_type="application/json; charset=utf-8")
+        # TODO: Make sure that this is the right payload.
+        payload = {
+            "doc_id": "PUT A UUID here",
+            "text": "Dis is a comment title"
+        }
+
+        r = self.client.create(Entity.Comments, payload)
+        # TODO: I don't ever get here, do I?
+        self.assertEqual(r['id'], comment_id)
+
+    def test_getting_a_single_comment(self):
+        comment_id = 'e634f784-3d8b-11e4-82a5-c3059141127e'
+        httpretty.register_uri(
+            httpretty.GET,
+            self.create_url(Entity.Comments, comment_id),
+            body=open('tests/json/get_single_comment.json').read(),
+            content_type="application/json; charset=utf-8")
+        comments = self.client.get(Entity.Comments, comment_id)
+        self.assertEqual(len(comments['objects']), 1)
+
+    @raises(CoredataError)
+    def test_getting_a_single_comment_error(self):
+        # TODO: Assert error message
+        httpretty.register_uri(
+            httpretty.GET,
+            self.create_url(Entity.Comments),
+            status=500,
+            body=json.dumps({'error_message': 'There was a error!'}),
+            content_type="application/json; charset=utf-8")
+        self.client.get(Entity.Comments, '')

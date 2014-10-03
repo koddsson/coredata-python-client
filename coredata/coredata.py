@@ -36,6 +36,7 @@ class CoredataError(Exception):
 
 
 class Entity(Enum):
+    Comments = 'comments/'
     Projects = 'projects/'
     Contacts = 'contacts/'
     Spaces = 'spaces/'

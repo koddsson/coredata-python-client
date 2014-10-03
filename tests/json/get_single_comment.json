@@ -1,0 +1,8 @@
+{
+  "author": "/api/v2/users/Administrator/",
+  "doc_id": "ee32bd6a-3e7e-11e4-9c8b-6776af69dd7b",
+  "id": 1,
+  "resource_uri": "/api/v2/comments/1/",
+  "text": "This is a comment!",
+  "time": "2014-10-03T03:51:37.810505"
+}
