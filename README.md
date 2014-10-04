@@ -24,14 +24,14 @@ TODO
 - Add tests for:
   - valuelists
   - dynatypes
-  - comments
-  - contacts
   - spaces
   - tasks
   - users
   - user
   - docs
   - nav
+  - ~~contacts~~
+  - ~~comments~~
   - ~~projects~~
   - ~~files~~
 - Run integration tests against a running server.

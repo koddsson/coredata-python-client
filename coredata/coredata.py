@@ -38,17 +38,17 @@ class Entity(Enum):
 
     """ A list of Coredata endpoints listed as a enumerate. """
 
-    Comments = 'comments/'
-    Projects = 'projects/'
-    Contacts = 'contacts/'
-    Spaces = 'spaces/'
-    Dynatypes = 'dynatypes/'
-    Files = 'files/'
-    Tasks = 'tasks/'
-    User = 'user/'
-    Users = 'users/'
-    Valuelist = 'valuelists/'
-    Content = 'content/'
+    Comments = 'comments'
+    Projects = 'projects'
+    Contacts = 'contacts'
+    Spaces = 'spaces'
+    Dynatypes = 'dynatypes'
+    Files = 'files'
+    Tasks = 'tasks'
+    User = 'user'
+    Users = 'users'
+    Valuelist = 'valuelists'
+    Content = 'content'
 
 
 class Utils:
@@ -83,7 +83,7 @@ class CoredataClient:
 
     def edit(self, entity, id, payload, sync=True):
         """ Edit a document. """
-        url = urljoin(self.host, entity.value)
+        url = urljoin(self.host, entity.value + '/')
         url = urljoin(url, id + '/')
         params = {'sync': str(sync).lower()}
         url = Utils.add_url_parameters(url, params)
@@ -95,7 +95,7 @@ class CoredataClient:
 
     def delete(self, entity, id, sync=True):
         """ Delete a document. """
-        url = urljoin(self.host, entity.value)
+        url = urljoin(self.host, entity.value + '/')
         url = urljoin(url, id + '/')
         params = {'sync': str(sync).lower()}
         url = Utils.add_url_parameters(url, params)
@@ -106,7 +106,7 @@ class CoredataClient:
 
     def create(self, entity, payload, sync=True):
         """ Create a new entity with the payload and return id of it. """
-        url = urljoin(self.host, entity.value)
+        url = urljoin(self.host, entity.value + '/')
 
         # Append the sync parameter to the URL
         params = {'sync': str(sync).lower()}
@@ -130,9 +130,9 @@ class CoredataClient:
 
         :todo: Rename search_terms
         """
-        url = urljoin(self.host, entity.value)
+        url = urljoin(self.host, entity.value + '/')
         url = urljoin(url, id + '/') if id else url
-        url = urljoin(url, sub_entity.value) if sub_entity else url
+        url = urljoin(url, sub_entity.value + '/') if sub_entity else url
         terms = {'sync': str(sync).lower()}
         if search_terms:
             terms.update(search_terms)
@@ -154,9 +154,10 @@ class CoredataClient:
 
             while next_path:
                 offset += limit
-                url = urljoin(self.host, entity.value)
+                url = urljoin(self.host, entity.value + '/')
                 url = urljoin(url, id + '/') if id else url
-                url = urljoin(url, sub_entity.value) if sub_entity else url
+                url = urljoin(
+                    url, sub_entity.value + '/') if sub_entity else url
                 terms = {'offset': offset}
                 url = Utils.add_url_parameters(
                     url, {'offset': offset})

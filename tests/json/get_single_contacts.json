@@ -1,0 +1,26 @@
+{
+  "aspects": {},
+  "contact_addresses": [],
+  "created": "2014-09-16T10:21:18",
+  "created_by": null,
+  "description": "",
+  "dynatype": {
+    "caption_plural": "dynatypes_labels:Organization_plural:",
+    "caption_singular": "dynatypes_labels:Organization_singular:",
+    "id": "2ca8a14e-3d8b-11e4-abe4-0b50caba6c0b"
+  },
+  "emails": [],
+  "id": "325c4e2e-3d8b-11e4-af86-77d500f184ba",
+  "identifier": "",
+  "modified": "2014-09-16T10:21:18",
+  "modified_by": null,
+  "organization": null,
+  "phones": [],
+  "resource_uri": "/api/v2/contacts/325c4e2e-3d8b-11e4-af86-77d500f184ba/",
+  "status": "contact_status:Active:",
+  "tags": [],
+  "title": "mmg.coredata.is",
+  "type": "Contact",
+  "urls": [],
+  "version": "None.0"
+}

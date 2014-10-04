@@ -15,10 +15,106 @@ class TestAPI(TestCase):
 
 
 class TestEntity(TestCase):
+
+    """
+    Helper functions for testing the Coredata API.
+
+    :todo: When functions here start with the `test_` prefix they are
+    automatically called for each class that subclasses this one. Maybe we can
+    dynamically run the standard tests for them.
+    """
+
     username = 'username'
     password = 'password'
     host = 'https://example.coredata.is'
     url = '{host}/api/v2/{entity}'
+
+    def create_a_entity(self, entity, entity_id):
+        url = 'http://example.coredata.is/doc/{id}'.format(
+            id=entity_id)
+        httpretty.register_uri(
+            httpretty.POST,
+            self.create_url(entity),
+            status=201,
+            location=url,
+            content_type="application/json; charset=utf-8")
+
+        # TODO: Is the payload always the same?
+        payload = {
+            "space": "TODO: Get a UUID here",
+            "title": "Dis is a comment created from the API"
+        }
+
+        id = self.client.create(entity, payload)
+        self.assertEqual(id, entity_id)
+
+    @raises(CoredataError)
+    def create_a_entity_error(self, entity, entity_id):
+        url = 'http://example.coredata.is/doc/{id}'.format(id=entity_id)
+        httpretty.register_uri(
+            httpretty.POST,
+            self.create_url(entity),
+            status=500,
+            body=json.dumps({'error_message': '#wontfix'}),
+            location=url,
+            content_type="application/json; charset=utf-8")
+        data = open('tests/json/get_single_{entity}.json'.format(
+            entity=entity.value)).read()
+        httpretty.register_uri(
+            httpretty.GET, url, body=data,
+            content_type="application/json; charset=utf-8")
+        # TODO: Make sure that this is the right payload.
+        payload = {
+            "doc_id": "PUT A UUID here",
+            "text": "Dis is a contact title"
+        }
+
+        r = self.client.create(entity, payload)
+        # TODO: I don't ever get here, do I?
+        self.assertEqual(r['id'], entity_id)
+
+    def get_a_single_entity(self, entity, entity_id):
+        httpretty.register_uri(
+            httpretty.GET,
+            self.create_url(entity, entity_id),
+            body=open('tests/json/get_single_{entity}.json'.format(
+                entity=entity.value)).read(),
+            content_type="application/json; charset=utf-8")
+        entities = self.client.get(entity, entity_id)
+        self.assertEqual(len(entities['objects']), 1)
+
+    @raises(CoredataError)
+    def getting_a_single_entity_error(self, entity):
+        # TODO: Assert error message
+        httpretty.register_uri(
+            httpretty.GET,
+            self.create_url(entity),
+            status=500,
+            body=json.dumps({'error_message': 'There was a error!'}),
+            content_type="application/json; charset=utf-8")
+        self.client.get(entity, '')
+
+    def getting_all_entities(self, entity, entity_count):
+        httpretty.register_uri(
+            httpretty.GET,
+            self.create_url(entity),
+            body=open('tests/json/get_all_{entity}.json'.format(
+                entity=entity.value)).read(),
+            content_type="application/json; charset=utf-8")
+        r = self.client.get(entity)
+        self.assertEqual(len(r), entity_count)
+        self.getting_all_entities_error(entity)
+
+    @raises(CoredataError)
+    def getting_all_entities_error(self, entity):
+        # TODO: Assert error message
+        httpretty.register_uri(
+            httpretty.GET,
+            self.create_url(entity),
+            status=500,
+            body=json.dumps({'error_message': 'There was a error!'}),
+            content_type="application/json; charset=utf-8")
+        self.client.get(entity, '')
 
     def __init__(self, test_name):
         self.client = CoredataClient(
@@ -26,11 +122,11 @@ class TestEntity(TestCase):
         super(TestEntity, self).__init__(test_name)
 
     def create_url(self, entity, id=None, sub_entity=None):
-        url = self.url.format(host=self.host, entity=entity.value)
+        url = self.url.format(host=self.host, entity=entity.value + '/')
         if id:
             url += id + '/'
         if sub_entity:
-            url += sub_entity.value
+            url += sub_entity.value + '/'
         return url
 
 
@@ -452,3 +548,27 @@ class TestComments(TestEntity):
             body=json.dumps({'error_message': 'There was a error!'}),
             content_type="application/json; charset=utf-8")
         self.client.get(Entity.Comments, '')
+
+
+@httpretty.activate
+class TestContacts(TestEntity):
+    def test_getting_all_contacts(self):
+        self.getting_all_entities(Entity.Contacts, 11)
+
+    def test_getting_all_contacts_error(self):
+        self.getting_all_entities_error(Entity.Contacts)
+
+    def test_creating_a_contact(self):
+        self.create_a_entity(
+            Entity.Contacts, 'f24203a0-3d8b-11e4-8e77-7ba23226dee9')
+
+    def test_creating_a_contact_error(self):
+        self.create_a_entity_error(
+            Entity.Contacts, 'f24203a0-3d8b-11e4-8e77-7ba23226dee9')
+
+    def test_getting_a_single_contact(self):
+        self.get_a_single_entity(
+            Entity.Contacts, 'e634f784-3d8b-11e4-82a5-c3059141127e')
+
+    def test_getting_a_single_contact_error(self):
+        self.getting_a_single_entity_error(Entity.Contacts)

@@ -1,0 +1,344 @@
+{
+  "meta": {
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total_count": 11
+  },
+  "objects": [
+    {
+      "aspects": {},
+      "contact_addresses": [],
+      "created": "2014-09-16T10:21:18",
+      "created_by": null,
+      "description": "",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Organization_plural:",
+        "caption_singular": "dynatypes_labels:Organization_singular:",
+        "id": "2ca8a14e-3d8b-11e4-abe4-0b50caba6c0b"
+      },
+      "emails": [],
+      "id": "325c4e2e-3d8b-11e4-af86-77d500f184ba",
+      "identifier": "",
+      "modified": "2014-09-16T10:21:18",
+      "modified_by": null,
+      "organization": null,
+      "phones": [],
+      "resource_uri": "/api/v2/contacts/325c4e2e-3d8b-11e4-af86-77d500f184ba/",
+      "status": "contact_status:Active:",
+      "tags": [],
+      "title": "mmg.coredata.is",
+      "type": "Contact",
+      "urls": [],
+      "version": "None.0"
+    },
+    {
+      "aspects": {},
+      "contact_addresses": [],
+      "created": "2014-09-16T14:26:19",
+      "created_by": null,
+      "description": "Nýr viðskiptatengiliður",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Organization_plural:",
+        "caption_singular": "dynatypes_labels:Organization_singular:",
+        "id": "2ca8a14e-3d8b-11e4-abe4-0b50caba6c0b"
+      },
+      "emails": [],
+      "id": "6d2f3832-3dad-11e4-bcb6-2fa0b4d7da73",
+      "identifier": "736b756c69",
+      "modified": "2014-09-16T14:26:19",
+      "modified_by": null,
+      "organization": null,
+      "phones": [],
+      "resource_uri": "/api/v2/contacts/6d2f3832-3dad-11e4-bcb6-2fa0b4d7da73/",
+      "status": "contact_status:Active:",
+      "tags": [],
+      "title": "Jóhanna Guðmundsdóttir",
+      "type": "Contact",
+      "urls": [],
+      "version": "None.0"
+    },
+    {
+      "aspects": {},
+      "contact_addresses": [
+        {
+          "city": "",
+          "code": "",
+          "country": "country:Iceland:europe",
+          "label": "address_label:Work:",
+          "state": "",
+          "street": ""
+        }
+      ],
+      "created": "2014-09-16T14:32:51",
+      "created_by": null,
+      "description": "",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Person_plural:",
+        "caption_singular": "dynatypes_labels:Person_singular:",
+        "id": "2bcbedb2-3d8b-11e4-9a8f-e7ff3c83deca"
+      },
+      "emails": [],
+      "id": "56e908e0-3dae-11e4-b524-8fdd92e2eeaa",
+      "identifier": "",
+      "modified": "2014-09-16T14:32:51",
+      "modified_by": null,
+      "organization": {
+        "id": "325c4e2e-3d8b-11e4-af86-77d500f184ba",
+        "title": "mmg.coredata.is"
+      },
+      "phones": [],
+      "resource_uri": "/api/v2/contacts/56e908e0-3dae-11e4-b524-8fdd92e2eeaa/",
+      "status": "contact_status:Active:",
+      "tags": [],
+      "title": "Auður Djúpauga",
+      "type": "Contact",
+      "urls": [],
+      "version": "None.0"
+    },
+    {
+      "aspects": {},
+      "contact_addresses": [],
+      "created": "2014-09-16T14:35:25",
+      "created_by": null,
+      "description": "",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Person_plural:",
+        "caption_singular": "dynatypes_labels:Person_singular:",
+        "id": "2bcbedb2-3d8b-11e4-9a8f-e7ff3c83deca"
+      },
+      "emails": [],
+      "id": "b2389e5e-3dae-11e4-b81f-6ba2ccbbbd40",
+      "identifier": "",
+      "modified": "2014-09-17T13:35:11",
+      "modified_by": null,
+      "organization": {
+        "id": "325c4e2e-3d8b-11e4-af86-77d500f184ba",
+        "title": "mmg.coredata.is"
+      },
+      "phones": [],
+      "resource_uri": "/api/v2/contacts/b2389e5e-3dae-11e4-b81f-6ba2ccbbbd40/",
+      "status": "contact_status:Active:",
+      "tags": [],
+      "title": "Bárður Dumbsson",
+      "type": "Contact",
+      "urls": [],
+      "version": "0.1"
+    },
+    {
+      "aspects": {},
+      "contact_addresses": [],
+      "created": "2014-09-17T09:43:57",
+      "created_by": null,
+      "description": "",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Person_plural:",
+        "caption_singular": "dynatypes_labels:Person_singular:",
+        "id": "2bcbedb2-3d8b-11e4-9a8f-e7ff3c83deca"
+      },
+      "emails": [],
+      "id": "25694856-3e4f-11e4-8498-03d31894aa66",
+      "identifier": "",
+      "modified": "2014-09-17T13:35:19",
+      "modified_by": null,
+      "organization": {
+        "id": "325c4e2e-3d8b-11e4-af86-77d500f184ba",
+        "title": "mmg.coredata.is"
+      },
+      "phones": [],
+      "resource_uri": "/api/v2/contacts/25694856-3e4f-11e4-8498-03d31894aa66/",
+      "status": "contact_status:Active:",
+      "tags": [],
+      "title": "Guðrún Ósvífursdóttir",
+      "type": "Contact",
+      "urls": [],
+      "version": "0.1"
+    },
+    {
+      "aspects": {},
+      "contact_addresses": [],
+      "created": "2014-09-17T14:02:17",
+      "created_by": null,
+      "description": "",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Person_plural:",
+        "caption_singular": "dynatypes_labels:Person_singular:",
+        "id": "2bcbedb2-3d8b-11e4-9a8f-e7ff3c83deca"
+      },
+      "emails": [],
+      "id": "3bb404f6-3e73-11e4-bedc-239761afb48a",
+      "identifier": "",
+      "modified": "2014-09-17T14:02:17",
+      "modified_by": null,
+      "organization": {
+        "id": "325c4e2e-3d8b-11e4-af86-77d500f184ba",
+        "title": "mmg.coredata.is"
+      },
+      "phones": [],
+      "resource_uri": "/api/v2/contacts/3bb404f6-3e73-11e4-bedc-239761afb48a/",
+      "status": "contact_status:Active:",
+      "tags": [],
+      "title": "Mörður Gígja",
+      "type": "Contact",
+      "urls": [],
+      "version": "None.0"
+    },
+    {
+      "aspects": {},
+      "contact_addresses": [],
+      "created": "2014-09-18T11:00:46",
+      "created_by": null,
+      "description": "",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Person_plural:",
+        "caption_singular": "dynatypes_labels:Person_singular:",
+        "id": "2bcbedb2-3d8b-11e4-9a8f-e7ff3c83deca"
+      },
+      "emails": [],
+      "id": "0a8cb7c8-3f23-11e4-a6d3-df8178f72504",
+      "identifier": "",
+      "modified": "2014-09-18T11:00:46",
+      "modified_by": null,
+      "organization": {
+        "id": "325c4e2e-3d8b-11e4-af86-77d500f184ba",
+        "title": "mmg.coredata.is"
+      },
+      "phones": [],
+      "resource_uri": "/api/v2/contacts/0a8cb7c8-3f23-11e4-a6d3-df8178f72504/",
+      "status": "contact_status:Active:",
+      "tags": [],
+      "title": "Hannes Pétursson",
+      "type": "Contact",
+      "urls": [],
+      "version": "None.0"
+    },
+    {
+      "aspects": {},
+      "contact_addresses": [],
+      "created": "2014-09-18T11:07:25",
+      "created_by": null,
+      "description": "",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Person_plural:",
+        "caption_singular": "dynatypes_labels:Person_singular:",
+        "id": "2bcbedb2-3d8b-11e4-9a8f-e7ff3c83deca"
+      },
+      "emails": [],
+      "id": "f86da3e4-3f23-11e4-bebb-27a1eab59d7c",
+      "identifier": "",
+      "modified": "2014-09-18T11:21:43",
+      "modified_by": null,
+      "organization": {
+        "id": "325c4e2e-3d8b-11e4-af86-77d500f184ba",
+        "title": "mmg.coredata.is"
+      },
+      "phones": [],
+      "resource_uri": "/api/v2/contacts/f86da3e4-3f23-11e4-bebb-27a1eab59d7c/",
+      "status": "contact_status:Active:",
+      "tags": [],
+      "title": "Haraldur Bjarnason",
+      "type": "Contact",
+      "urls": [],
+      "version": "0.1"
+    },
+    {
+      "aspects": {},
+      "contact_addresses": [],
+      "created": "2014-09-18T15:16:24",
+      "created_by": null,
+      "description": "",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Organization_plural:",
+        "caption_singular": "dynatypes_labels:Organization_singular:",
+        "id": "2ca8a14e-3d8b-11e4-abe4-0b50caba6c0b"
+      },
+      "emails": [],
+      "id": "c10f35e8-3f46-11e4-927c-97810f20a96a",
+      "identifier": "",
+      "modified": "2014-09-18T15:16:24",
+      "modified_by": null,
+      "organization": null,
+      "phones": [],
+      "resource_uri": "/api/v2/contacts/c10f35e8-3f46-11e4-927c-97810f20a96a/",
+      "status": "contact_status:Active:",
+      "tags": [],
+      "title": "Azazo hf.",
+      "type": "Contact",
+      "urls": [
+        {
+          "label": "url_label:Website:",
+          "url": "azazo.is"
+        }
+      ],
+      "version": "None.0"
+    },
+    {
+      "aspects": {},
+      "contact_addresses": [],
+      "created": "2014-09-22T12:01:10",
+      "created_by": "Administrator Administrator",
+      "description": "",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Person_plural:",
+        "caption_singular": "dynatypes_labels:Person_singular:",
+        "id": "2bcbedb2-3d8b-11e4-9a8f-e7ff3c83deca"
+      },
+      "emails": [],
+      "id": "243e0980-4250-11e4-83f5-cfab3de2160d",
+      "identifier": "",
+      "modified": "2014-09-22T12:01:10",
+      "modified_by": null,
+      "organization": {
+        "id": "325c4e2e-3d8b-11e4-af86-77d500f184ba",
+        "title": "mmg.coredata.is"
+      },
+      "phones": [],
+      "resource_uri": "/api/v2/contacts/243e0980-4250-11e4-83f5-cfab3de2160d/",
+      "status": "contact_status:Active:",
+      "tags": [],
+      "title": "Administrator Administrator",
+      "type": "Contact",
+      "urls": [],
+      "version": "None.0"
+    },
+    {
+      "aspects": {},
+      "contact_addresses": [
+        {
+          "city": "",
+          "code": "",
+          "country": "country:Iceland:europe",
+          "label": "address_label:Work:",
+          "state": "",
+          "street": ""
+        }
+      ],
+      "created": "2014-09-18T15:00:03",
+      "created_by": "Administrator Administrator",
+      "description": "",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Person_plural:",
+        "caption_singular": "dynatypes_labels:Person_singular:",
+        "id": "2bcbedb2-3d8b-11e4-9a8f-e7ff3c83deca"
+      },
+      "emails": [],
+      "id": "784fdcce-3f44-11e4-947b-07bb3bceb30f",
+      "identifier": "2706803139",
+      "modified": "2014-09-25T11:33:09",
+      "modified_by": null,
+      "organization": {
+        "id": "325c4e2e-3d8b-11e4-af86-77d500f184ba",
+        "title": "mmg.coredata.is"
+      },
+      "phones": [],
+      "resource_uri": "/api/v2/contacts/784fdcce-3f44-11e4-947b-07bb3bceb30f/",
+      "status": "contact_status:Active:",
+      "tags": [],
+      "title": "Óskar Þór Þráinsson",
+      "type": "Contact",
+      "urls": [],
+      "version": "0.1"
+    }
+  ]
+}
