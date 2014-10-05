@@ -1,3 +1,5 @@
+""" Coredata REST api python library. """
+
 import json
 import requests
 
