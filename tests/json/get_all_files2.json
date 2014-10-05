@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "limit": 20,
+    "next": null,
+    "offset": 40,
+    "previous": "/api/v2/files/?api_key=special-key&limit=20&offset=20",
+    "total_count": 45
+  },
+  "objects": [
+    {
+      "aspects": {
+        "digitalsignature": {
+          "digital_signature": ""
+        }
+      },
+      "category": "main",
+      "created": "2014-09-17T13:58:32",
+      "created_by": "Guðrún Ósvífursdóttir",
+      "description": "",
+      "digest": "05a72aa1237a0cc1666aa2fd048dc9ac",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Report_plural:",
+        "caption_singular": "dynatypes_labels:Report_singular:",
+        "id": "31272eca-3d8b-11e4-af64-9f759a5cf94e"
+      },
+      "filename": "32B _BATES_June_Environmental_ Conditions Update.pdf",
+      "folder": null,
+      "id": "b5968556-3e72-11e4-9da1-2fdf8dd1762f",
+      "mime_type": "application/pdf",
+      "modified": "2014-09-17T16:35:46",
+      "modified_by": null,
+      "owner": null,
+      "parent": "51638428-3e70-11e4-ab1b-63b012c73d96",
+      "project": {
+        "id": "513464e0-3e70-11e4-8e67-bb0c976204fc",
+        "identifier": "2014-10",
+        "title": "Rýni á meginferli - Mannauður"
+      },
+      "resource_uri": "/api/v2/files/b5968556-3e72-11e4-9da1-2fdf8dd1762f/",
+      "size": 4633816,
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "tags": [],
+      "title": "32B _BATES_June_Environmental_ Conditions Update",
+      "type": "File",
+      "version": "0.1"
+    },
+    {
+      "aspects": {
+        "digitalsignature": {
+          "digital_signature": ""
+        }
+      },
+      "category": "main",
+      "created": "2014-09-17T13:58:37",
+      "created_by": "Guðrún Ósvífursdóttir",
+      "description": "",
+      "digest": "",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:File_plural:",
+        "caption_singular": "dynatypes_labels:File_singular:",
+        "id": "36f7da88-3e59-11e4-bea0-d3a429e2fd15"
+      },
+      "filename": "31_Strowd_June_Flood_Awareness.pdf",
+      "folder": null,
+      "id": "b8eb8454-3e72-11e4-b29d-a3f89222856b",
+      "mime_type": "application/pdf",
+      "modified": "2014-09-17T13:58:37",
+      "modified_by": null,
+      "owner": null,
+      "parent": "51638428-3e70-11e4-ab1b-63b012c73d96",
+      "project": {
+        "id": "513464e0-3e70-11e4-8e67-bb0c976204fc",
+        "identifier": "2014-10",
+        "title": "Rýni á meginferli - Mannauður"
+      },
+      "resource_uri": "/api/v2/files/b8eb8454-3e72-11e4-b29d-a3f89222856b/",
+      "size": 0,
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "tags": [],
+      "title": "31_Strowd_June_Flood_Awareness",
+      "type": "File",
+      "version": "None.0"
+    },
+    {
+      "aspects": {
+        "digitalsignature": {
+          "digital_signature": ""
+        }
+      },
+      "category": "main",
+      "created": "2014-09-30T15:09:40",
+      "created_by": null,
+      "description": "",
+      "digest": "3ec7fc946ae67f5b22fcc690bbcdd102",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:File_plural:",
+        "caption_singular": "dynatypes_labels:File_singular:",
+        "id": "36f7da88-3e59-11e4-bea0-d3a429e2fd15"
+      },
+      "filename": "Samþykkt stjórnar 31.09.2014.pdf",
+      "folder": null,
+      "id": "ccf84716-48b3-11e4-871b-1fadae2d49a1",
+      "mime_type": "application/pdf",
+      "modified": "2014-09-30T15:12:15",
+      "modified_by": null,
+      "owner": null,
+      "parent": "0245a2ba-3e73-11e4-b7b7-331379114c67",
+      "project": {},
+      "resource_uri": "/api/v2/files/ccf84716-48b3-11e4-871b-1fadae2d49a1/",
+      "size": 89729,
+      "space": {
+        "id": "023a02ca-3e73-11e4-8e50-7b146cbe6428",
+        "title": "Upplýsingar"
+      },
+      "tags": [],
+      "title": "Samþykkt stjórnar 31.09.2014",
+      "type": "File",
+      "version": "0.4"
+    },
+    {
+      "aspects": {
+        "digitalsignature": {
+          "digital_signature": "[[\"\\u00d3skar \\u00de\\u00f3r \\u00der\\u00e1insson\", \"1411054885\"], [\"Hannes P\\u00e9tursson\", \"1412343657\"], [\"Haraldur Agnar Bjarnason\", \"1411054737\"]]"
+        }
+      },
+      "category": "main",
+      "created": "2014-09-18T12:23:23",
+      "created_by": "Haraldur Bjarnason",
+      "description": "",
+      "digest": "ada1f1bb75af8b01814116b419c6e03e",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:File_plural:",
+        "caption_singular": "dynatypes_labels:File_singular:",
+        "id": "36f7da88-3e59-11e4-bea0-d3a429e2fd15"
+      },
+      "filename": "Fundargerd.pdf",
+      "folder": null,
+      "id": "953320fa-3f2e-11e4-9ad1-277a99cac0c3",
+      "mime_type": "application/pdf",
+      "modified": "2014-10-03T13:40:56",
+      "modified_by": null,
+      "owner": null,
+      "parent": "b5d9c9de-3e80-11e4-9453-474a1d0e39ef",
+      "project": {
+        "id": "b5b410d6-3e80-11e4-b90b-77230dd3f4cc",
+        "identifier": "2014-31",
+        "title": "Stjórnarfundur - 1.okt.2014"
+      },
+      "resource_uri": "/api/v2/files/953320fa-3f2e-11e4-9ad1-277a99cac0c3/",
+      "size": 252272,
+      "space": {
+        "id": "f7ca5d26-3e72-11e4-b8a1-674baf76ddd9",
+        "title": "Stjórnarfundir"
+      },
+      "tags": [],
+      "title": "Fundargerd",
+      "type": "File",
+      "version": "0.3"
+    },
+    {
+      "aspects": {
+        "digitalsignature": {
+          "digital_signature": "[[\"Haraldur Agnar Bjarnason\", \"1411051857\"], [\"Brynja Gu\\u00f0mundsd\\u00f3ttir\", \"1412005810\"], [\"Hannes P\\u00e9tursson\", \"1412351560\"], [\"\\u00d3skar \\u00de\\u00f3r \\u00der\\u00e1insson\", \"1411042668\"]]"
+        }
+      },
+      "category": "main",
+      "created": "2014-09-18T12:17:18",
+      "created_by": "Bárður Dumbsson",
+      "description": "",
+      "digest": "870113bffa0e44b5168a0d02f7418eaa",
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:File_plural:",
+        "caption_singular": "dynatypes_labels:File_singular:",
+        "id": "36f7da88-3e59-11e4-bea0-d3a429e2fd15"
+      },
+      "filename": "Fundargerd.pdf",
+      "folder": null,
+      "id": "bbd663c6-3f2d-11e4-b0c9-47117557e5b7",
+      "mime_type": "application/pdf",
+      "modified": "2014-10-03T15:52:51",
+      "modified_by": null,
+      "owner": null,
+      "parent": "6c20f058-3f1e-11e4-a259-af8079120cc3",
+      "project": {
+        "id": "6be0035e-3f1e-11e4-a1ce-e3ae346d4ab6",
+        "identifier": "2014-34",
+        "title": "Stjórnarfundur 1.nóv.2014"
+      },
+      "resource_uri": "/api/v2/files/bbd663c6-3f2d-11e4-b0c9-47117557e5b7/",
+      "size": 270422,
+      "space": {
+        "id": "f7ca5d26-3e72-11e4-b8a1-674baf76ddd9",
+        "title": "Stjórnarfundir"
+      },
+      "tags": [],
+      "title": "Fundargerd",
+      "type": "File",
+      "version": "0.14"
+    }
+  ]
+}

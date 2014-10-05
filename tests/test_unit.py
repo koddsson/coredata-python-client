@@ -1,3 +1,4 @@
+import glob
 import json
 import httpretty
 
@@ -128,11 +129,15 @@ class EntityTestCase(object):
         self.client.get(self.entity, '')
 
     def test_getting_all_entities(self):
+        responses = []
+        file_path = 'tests/json/get_all_{entity}*.json'.format(
+            entity=self.entity.value)
+        for f in glob.glob(file_path):
+            responses.append(httpretty.Response(body=open(f).read()))
         httpretty.register_uri(
             httpretty.GET,
             self.create_url(self.entity),
-            body=open('tests/json/get_all_{entity}.json'.format(
-                entity=self.entity.value)).read(),
+            responses=responses,
             content_type="application/json; charset=utf-8")
         r = self.client.get(self.entity)
         self.assertEqual(len(r), self.entity_count)
@@ -241,7 +246,7 @@ class TestProjects(TestCase, EntityTestCase):
 class TestFiles(TestCase, EntityTestCase):
     entity = Entity.Files
     entity_id = '4ab3bb32-3e72-11e4-bfaa-ebeae41148db'
-    entity_count = 4
+    entity_count = 45
     skip_list = []
 
     def setUp(self):
