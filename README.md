@@ -21,17 +21,5 @@ something is breaking. You can also get me on
 
 TODO
 ----
-- Add tests for:
-  - valuelists
-  - dynatypes
-  - spaces
-  - tasks
-  - users
-  - user
-  - docs
-  - nav
-  - ~~contacts~~
-  - ~~comments~~
-  - ~~projects~~
-  - ~~files~~
+- Go over each and every endpoint and make sure there exists a test for it.
 - Run integration tests against a running server.

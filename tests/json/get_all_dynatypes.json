@@ -1,0 +1,333 @@
+{
+  "meta": {
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total_count": 20
+  },
+  "objects": [
+    {
+      "caption_plural": "dynatypes_labels:timetask_plural:",
+      "caption_singular": "dynatypes_labels:timetask_singular:",
+      "description": null,
+      "id": "00a9cb20-3e82-11e4-a69a-b749d4fd0d75",
+      "optional_aspects": [],
+      "required_aspects": [
+        "timespan"
+      ],
+      "resource_uri": "/api/v2/dynatypes/00a9cb20-3e82-11e4-a69a-b749d4fd0d75/",
+      "status_list": "space_status",
+      "systype": "Task",
+      "title": "timetask",
+      "type": "Dynatype",
+      "version": "0.2"
+    },
+    {
+      "caption_plural": "dynatypes_labels:Calender_plural:",
+      "caption_singular": "dynatypes_labels:Calender_singular:",
+      "description": null,
+      "id": "1264e1d0-3d9f-11e4-b397-eb43ae03d54a",
+      "optional_aspects": [],
+      "required_aspects": [
+        "timespan"
+      ],
+      "resource_uri": "/api/v2/dynatypes/1264e1d0-3d9f-11e4-b397-eb43ae03d54a/",
+      "status_list": "space_status",
+      "systype": "Project",
+      "title": "Calender",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:Project_plural:",
+      "caption_singular": "dynatypes_labels:Project_singular:",
+      "description": null,
+      "id": "27d48f7a-3d8b-11e4-8833-3b96f0136b8e",
+      "optional_aspects": [],
+      "required_aspects": [],
+      "resource_uri": "/api/v2/dynatypes/27d48f7a-3d8b-11e4-8833-3b96f0136b8e/",
+      "status_list": "project_status",
+      "systype": "Project",
+      "title": "Project",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:DevelopmentProject_plural:",
+      "caption_singular": "dynatypes_labels:DevelopmentProject_singular:",
+      "description": null,
+      "id": "2908dd9c-3d8b-11e4-a047-e788e8f07464",
+      "optional_aspects": [],
+      "required_aspects": [
+        "developmentproject"
+      ],
+      "resource_uri": "/api/v2/dynatypes/2908dd9c-3d8b-11e4-a047-e788e8f07464/",
+      "status_list": "project_status",
+      "systype": "Project",
+      "title": "DevelopmentProject",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:Task_plural:",
+      "caption_singular": "dynatypes_labels:Task_singular:",
+      "description": null,
+      "id": "29fd1100-3d8b-11e4-aa50-f39eac041b82",
+      "optional_aspects": [],
+      "required_aspects": [],
+      "resource_uri": "/api/v2/dynatypes/29fd1100-3d8b-11e4-aa50-f39eac041b82/",
+      "status_list": "task_status",
+      "systype": "Task",
+      "title": "Task",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:TaskSection_plural:",
+      "caption_singular": "dynatypes_labels:TaskSection_singular:",
+      "description": null,
+      "id": "2ae77b14-3d8b-11e4-837d-b3f41c8a4364",
+      "optional_aspects": [],
+      "required_aspects": [
+        "tasksection"
+      ],
+      "resource_uri": "/api/v2/dynatypes/2ae77b14-3d8b-11e4-837d-b3f41c8a4364/",
+      "status_list": "task_status",
+      "systype": "Task",
+      "title": "TaskSection",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:Person_plural:",
+      "caption_singular": "dynatypes_labels:Person_singular:",
+      "description": null,
+      "id": "2bcbbc98-3d8b-11e4-85d3-831744d83508",
+      "optional_aspects": [],
+      "required_aspects": [
+        "person"
+      ],
+      "resource_uri": "/api/v2/dynatypes/2bcbbc98-3d8b-11e4-85d3-831744d83508/",
+      "status_list": "contact_status",
+      "systype": "Contact",
+      "title": "Person",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:Organization_plural:",
+      "caption_singular": "dynatypes_labels:Organization_singular:",
+      "description": null,
+      "id": "2ca86d5a-3d8b-11e4-96e3-abed814c7dda",
+      "optional_aspects": [],
+      "required_aspects": [
+        "organization"
+      ],
+      "resource_uri": "/api/v2/dynatypes/2ca86d5a-3d8b-11e4-96e3-abed814c7dda/",
+      "status_list": "contact_status",
+      "systype": "Contact",
+      "title": "Organization",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:File_plural:",
+      "caption_singular": "dynatypes_labels:File_singular:",
+      "description": null,
+      "id": "2d9a4f58-3d8b-11e4-ae4f-8b2d349087cd",
+      "optional_aspects": [],
+      "required_aspects": [
+        "digitalsignature"
+      ],
+      "resource_uri": "/api/v2/dynatypes/2d9a4f58-3d8b-11e4-ae4f-8b2d349087cd/",
+      "status_list": "audit_task_status",
+      "systype": "File",
+      "title": "File",
+      "type": "Dynatype",
+      "version": "0.2"
+    },
+    {
+      "caption_plural": "dynatypes_labels:Contract_plural:",
+      "caption_singular": "dynatypes_labels:Contract_singular:",
+      "description": null,
+      "id": "2e8d6efe-3d8b-11e4-b2cc-e73540039f86",
+      "optional_aspects": [],
+      "required_aspects": [
+        "contractdate",
+        "letterout"
+      ],
+      "resource_uri": "/api/v2/dynatypes/2e8d6efe-3d8b-11e4-b2cc-e73540039f86/",
+      "status_list": "space_status",
+      "systype": "File",
+      "title": "Contract",
+      "type": "Dynatype",
+      "version": "0.3"
+    },
+    {
+      "caption_plural": "dynatypes_labels:LetterIn_plural:",
+      "caption_singular": "dynatypes_labels:LetterIn_singular:",
+      "description": null,
+      "id": "2efb77c8-3d8b-11e4-9caf-cf7a20386233",
+      "optional_aspects": [],
+      "required_aspects": [
+        "letterin"
+      ],
+      "resource_uri": "/api/v2/dynatypes/2efb77c8-3d8b-11e4-9caf-cf7a20386233/",
+      "status_list": null,
+      "systype": "File",
+      "title": "LetterIn",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:LetterOut_plural:",
+      "caption_singular": "dynatypes_labels:LetterOut_singular:",
+      "description": null,
+      "id": "2f6cd508-3d8b-11e4-bc80-372f9bfea4df",
+      "optional_aspects": [],
+      "required_aspects": [
+        "letterout"
+      ],
+      "resource_uri": "/api/v2/dynatypes/2f6cd508-3d8b-11e4-bc80-372f9bfea4df/",
+      "status_list": null,
+      "systype": "File",
+      "title": "LetterOut",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:MeetingNote_plural:",
+      "caption_singular": "dynatypes_labels:MeetingNote_singular:",
+      "description": null,
+      "id": "2fdb3c78-3d8b-11e4-ab85-2307bffa59d4",
+      "optional_aspects": [],
+      "required_aspects": [
+        "letterout"
+      ],
+      "resource_uri": "/api/v2/dynatypes/2fdb3c78-3d8b-11e4-ab85-2307bffa59d4/",
+      "status_list": null,
+      "systype": "File",
+      "title": "MeetingNote",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:Memo_plural:",
+      "caption_singular": "dynatypes_labels:Memo_singular:",
+      "description": null,
+      "id": "304a8fec-3d8b-11e4-9d96-fbf2bcbb43ee",
+      "optional_aspects": [],
+      "required_aspects": [
+        "letterout"
+      ],
+      "resource_uri": "/api/v2/dynatypes/304a8fec-3d8b-11e4-9d96-fbf2bcbb43ee/",
+      "status_list": null,
+      "systype": "File",
+      "title": "Memo",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:Other_plural:",
+      "caption_singular": "dynatypes_labels:Other_singular:",
+      "description": null,
+      "id": "30b8d308-3d8b-11e4-aa77-a3e909de778a",
+      "optional_aspects": [],
+      "required_aspects": [
+        "letterout"
+      ],
+      "resource_uri": "/api/v2/dynatypes/30b8d308-3d8b-11e4-aa77-a3e909de778a/",
+      "status_list": null,
+      "systype": "File",
+      "title": "Other",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:Report_plural:",
+      "caption_singular": "dynatypes_labels:Report_singular:",
+      "description": null,
+      "id": "3126fa0e-3d8b-11e4-aee7-cb10d14dec6a",
+      "optional_aspects": [],
+      "required_aspects": [
+        "letterout"
+      ],
+      "resource_uri": "/api/v2/dynatypes/3126fa0e-3d8b-11e4-aee7-cb10d14dec6a/",
+      "status_list": null,
+      "systype": "File",
+      "title": "Report",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:QualityDocument_plural:",
+      "caption_singular": "dynatypes_labels:QualityDocument_singular:",
+      "description": null,
+      "id": "31a88b0a-3d8b-11e4-94cf-b351453f4657",
+      "optional_aspects": [],
+      "required_aspects": [
+        "secondarytype",
+        "filenumber",
+        "filerevisiondate",
+        "fileauthors",
+        "fileapprovedby",
+        "filerequirement",
+        "filestatus"
+      ],
+      "resource_uri": "/api/v2/dynatypes/31a88b0a-3d8b-11e4-94cf-b351453f4657/",
+      "status_list": null,
+      "systype": "File",
+      "title": "QualityDocument",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:Cars_plural:",
+      "caption_singular": "dynatypes_labels:Cars_singular:",
+      "description": null,
+      "id": "321b90be-3d8b-11e4-8d3e-e72bce805abc",
+      "optional_aspects": [],
+      "required_aspects": [
+        "cars"
+      ],
+      "resource_uri": "/api/v2/dynatypes/321b90be-3d8b-11e4-8d3e-e72bce805abc/",
+      "status_list": null,
+      "systype": "File",
+      "title": "Cars",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:IndicationProject_plural:",
+      "caption_singular": "dynatypes_labels:IndicationProject_singular:",
+      "description": null,
+      "id": "33bc8a0e-3d8b-11e4-95a2-bfd19453cb40",
+      "optional_aspects": [],
+      "required_aspects": [
+        "errortype",
+        "categorytype"
+      ],
+      "resource_uri": "/api/v2/dynatypes/33bc8a0e-3d8b-11e4-95a2-bfd19453cb40/",
+      "status_list": "indication_project_status",
+      "systype": "Project",
+      "title": "IndicationProject",
+      "type": "Dynatype",
+      "version": "0.1"
+    },
+    {
+      "caption_plural": "dynatypes_labels:IndicationTask_plural:",
+      "caption_singular": "dynatypes_labels:IndicationTask_singular:",
+      "description": null,
+      "id": "34d04e62-3d8b-11e4-9231-37c29532ea1a",
+      "optional_aspects": [],
+      "required_aspects": [],
+      "resource_uri": "/api/v2/dynatypes/34d04e62-3d8b-11e4-9231-37c29532ea1a/",
+      "status_list": "indication_task_status",
+      "systype": "Task",
+      "title": "IndicationTask",
+      "type": "Dynatype",
+      "version": "0.1"
+    }
+  ]
+}

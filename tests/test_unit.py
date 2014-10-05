@@ -1,9 +1,21 @@
 import json
 import httpretty
 
-from unittest import TestCase
 from nose.tools import raises
+from unittest import TestCase, SkipTest, skip
 from coredata import CoredataClient, Entity, CoredataError
+
+
+def skipIfInList(action):
+    def test_decorator(test_method):
+        def test_decorated(self, *args, **kwargs):
+            if action in self.skip_list:
+                msg = ('Action: "{action}" not supported by Coredata for '
+                       '{entity}.').format(action=action, entity=self.entity)
+                raise SkipTest(msg)
+            test_method(self)
+        return test_decorated
+    return test_decorator
 
 
 @httpretty.activate
@@ -40,7 +52,10 @@ class EntityTestCase(object):
             url += sub_entity.value + '/'
         return url
 
+    @skipIfInList('create')
     def test_create_a_entity(self):
+        if 'create' in self.skip_list:
+            return
         url = 'http://example.coredata.is/doc/{id}'.format(
             id=self.entity_id)
         httpretty.register_uri(
@@ -60,7 +75,10 @@ class EntityTestCase(object):
         self.assertEqual(id, self.entity_id)
 
     @raises(CoredataError)
+    @skipIfInList('create')
     def test_create_a_entity_error(self):
+        if 'create' in self.skip_list:
+            return
         url = 'http://example.coredata.is/doc/{id}'.format(id=self.entity_id)
         httpretty.register_uri(
             httpretty.POST,
@@ -84,7 +102,10 @@ class EntityTestCase(object):
         # TODO: I don't ever get here, do I?
         self.assertEqual(r['id'], self.entity_id)
 
+    @skipIfInList('get')
     def test_get_a_single_entity(self):
+        if 'get' in self.skip_list:
+            return
         httpretty.register_uri(
             httpretty.GET,
             self.create_url(self.entity, self.entity_id),
@@ -95,6 +116,7 @@ class EntityTestCase(object):
         self.assertEqual(len(entities['objects']), 1)
 
     @raises(CoredataError)
+    @skipIfInList('get')
     def test_getting_a_single_entity_error(self):
         # TODO: Assert error message
         httpretty.register_uri(
@@ -135,6 +157,7 @@ class TestProjects(TestCase, EntityTestCase):
     entity = Entity.Projects
     entity_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
     entity_count = 20
+    skip_list = []
 
     def setUp(self):
         self.client = CoredataClient(
@@ -219,6 +242,7 @@ class TestFiles(TestCase, EntityTestCase):
     entity = Entity.Files
     entity_id = '4ab3bb32-3e72-11e4-bfaa-ebeae41148db'
     entity_count = 4
+    skip_list = []
 
     def setUp(self):
         self.client = CoredataClient(
@@ -318,6 +342,7 @@ class TestComments(TestCase, EntityTestCase):
     entity = Entity.Comments
     entity_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
     entity_count = 1
+    skip_list = ['delete', 'edit']
 
     def setUp(self):
         self.client = CoredataClient(
@@ -329,6 +354,129 @@ class TestContacts(TestCase, EntityTestCase):
     entity = Entity.Contacts
     entity_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
     entity_count = 11
+    skip_list = []
+
+    def setUp(self):
+        self.client = CoredataClient(
+            host=self.host, auth=(self.username, self.password))
+
+
+@httpretty.activate
+class TestValuelist(TestCase, EntityTestCase):
+    entity = Entity.Valuelist
+    entity_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
+    entity_count = 49
+    skip_list = ['create', 'edit', 'get', 'delete']
+
+    def setUp(self):
+        self.client = CoredataClient(
+            host=self.host, auth=(self.username, self.password))
+
+    def test_getting_valuelist_by_name(self):
+        httpretty.register_uri(
+            httpretty.GET,
+            self.create_url(self.entity, 'templates_labels'),
+            body=open('tests/json/get_valuelist_by_name.json').read(),
+            content_type="application/json; charset=utf-8")
+        entities = self.client.get(self.entity, 'templates_labels')
+        self.assertEqual(len(entities['objects'][0]['entries']), 28)
+
+
+@httpretty.activate
+class TestDynatypes(TestCase, EntityTestCase):
+    entity = Entity.Dynatypes
+    entity_id = '321b90be-3d8b-11e4-8d3e-e72bce805abc'
+    entity_count = 20
+    skip_list = ['create', 'edit', 'delete']
+
+    def setUp(self):
+        self.client = CoredataClient(
+            host=self.host, auth=(self.username, self.password))
+
+
+@httpretty.activate
+class TestSpaces(TestCase, EntityTestCase):
+    entity = Entity.Spaces
+    entity_id = '023a02ca-3e73-11e4-8e50-7b146cbe6428'
+    entity_count = 4
+    skip_list = []
+
+    def setUp(self):
+        self.client = CoredataClient(
+            host=self.host, auth=(self.username, self.password))
+
+    def testRest(self):
+        # TODO: Implement these endpoints
+        # GET /api/v2/spaces/{id}/files/
+        # GET /api/v2/spaces/{id}/files/templates/
+        # GET /api/v2/spaces/{id}/projects/
+        # GET /api/v2/spaces/{id}/projects/templates/
+        pass
+
+
+@httpretty.activate
+class TestTasks(TestCase, EntityTestCase):
+    entity = Entity.Tasks
+    entity_id = '9a8ddcf0-4746-11e4-b677-db026e61ad0a'
+    entity_count = 4
+    skip_list = []
+
+    def setUp(self):
+        self.client = CoredataClient(
+            host=self.host, auth=(self.username, self.password))
+
+
+@httpretty.activate
+class TestUser(TestCase, EntityTestCase):
+    entity = Entity.User
+    entity_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
+    entity_count = 1
+    skip_list = ['create', 'edit', 'get', 'delete']
+
+    def setUp(self):
+        self.client = CoredataClient(
+            host=self.host, auth=(self.username, self.password))
+
+    def testRest(self):
+        # TODO: add tests for these endpoints
+        # GET /api/v2/user/{username}/
+        # GET /api/v2/user/{username}/files/
+        # GET /api/v2/user/{username}/files/templates/
+        # GET /api/v2/user/{username}/tasks/
+        # GET /api/v2/user/{username}/projects
+        pass
+
+
+@httpretty.activate
+class TestUsers(TestCase, EntityTestCase):
+    entity = Entity.Users
+    entity_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
+    entity_count = 9
+    skip_list = ['create', 'edit', 'get', 'delete']
+
+    def setUp(self):
+        self.client = CoredataClient(
+            host=self.host, auth=(self.username, self.password))
+
+
+@httpretty.activate
+@skip('Getting all docs through endpoint is broken')
+class TestDocs(TestCase, EntityTestCase):
+    entity = Entity.Docs
+    entity_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
+    entity_count = 11
+
+    def setUp(self):
+        self.client = CoredataClient(
+            host=self.host, auth=(self.username, self.password))
+
+
+@httpretty.activate
+class TestNav(TestCase, EntityTestCase):
+    entity = Entity.Nav
+    entity_id = 'f24203a0-3d8b-11e4-8e77-7ba23226dee9'
+    entity_count = 1
+    skip_list = ['create', 'edit', 'get', 'delete']
 
     def setUp(self):
         self.client = CoredataClient(

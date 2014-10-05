@@ -1,19 +1,3 @@
-"""
-Coredata API Python Client.
-
-Usage:
-  coredata_api.py create <entity> <file> --host=<host> --auth=<auth> [--sync]
-  coredata_api.py get <entity> --host=<host> --auth=<auth> [--sync]
-  coredata_api.py -h | --help
-  coredata_api.py --version
-
-Options:
-  -h --help     Show this screen.
-  --version     Show version.
-  --sync        Make requests syncronus (default is async)
-"""
-from docopt import docopt  # NOQA
-
 import json
 import requests
 
@@ -38,6 +22,8 @@ class Entity(Enum):
 
     """ A list of Coredata endpoints listed as a enumerate. """
 
+    Docs = 'docs'
+    Nav = 'nav'
     Comments = 'comments'
     Projects = 'projects'
     Contacts = 'contacts'

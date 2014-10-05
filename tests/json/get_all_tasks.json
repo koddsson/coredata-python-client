@@ -1,0 +1,187 @@
+{
+  "meta": {
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total_count": 4
+  },
+  "objects": [
+    {
+      "aspects": {},
+      "associated_contacts_id": [],
+      "associated_users": [],
+      "connected_users": [
+        "gudrun"
+      ],
+      "contacts": [],
+      "created": "2014-09-28T19:26:37",
+      "created_by": "Guðrún Ósvífursdóttir",
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Task_plural:",
+        "caption_singular": "dynatypes_labels:Task_singular:",
+        "id": "29fd4652-3d8b-11e4-b52b-e72824331a86"
+      },
+      "id": "5da688a6-4745-11e4-b23c-9f5602da6aff",
+      "modified": "2014-09-28T19:26:37",
+      "modified_by": null,
+      "project": {
+        "id": "d71ee462-3e71-11e4-a671-9f316da215e3",
+        "identifier": "2014-14",
+        "title": "(4) Skipulagning innleiðingar"
+      },
+      "resource_uri": "/api/v2/tasks/5da688a6-4745-11e4-b23c-9f5602da6aff/",
+      "responsible_users": [
+        {
+          "first_name": "Guðrún",
+          "last_name": "Ósvífursdóttir",
+          "username": "gudrun"
+        }
+      ],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "task_status:Pending:",
+      "status_message": "",
+      "tags": [],
+      "title": "Skipuleggja innleiðingu",
+      "type": "Task",
+      "version": "None.0"
+    },
+    {
+      "aspects": {},
+      "associated_contacts_id": [],
+      "associated_users": [],
+      "connected_users": [
+        "gudrun"
+      ],
+      "contacts": [],
+      "created": "2014-09-28T19:27:39",
+      "created_by": "Guðrún Ósvífursdóttir",
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Task_plural:",
+        "caption_singular": "dynatypes_labels:Task_singular:",
+        "id": "29fd4652-3d8b-11e4-b52b-e72824331a86"
+      },
+      "id": "822e7814-4745-11e4-a747-07b9ca96742d",
+      "modified": "2014-09-28T19:27:39",
+      "modified_by": null,
+      "project": {
+        "id": "83b29c9c-3e71-11e4-b515-87790595654d",
+        "identifier": "2014-12",
+        "title": "(2) Vinnustofa - núverandi ferli"
+      },
+      "resource_uri": "/api/v2/tasks/822e7814-4745-11e4-a747-07b9ca96742d/",
+      "responsible_users": [
+        {
+          "first_name": "Guðrún",
+          "last_name": "Ósvífursdóttir",
+          "username": "gudrun"
+        }
+      ],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "task_status:In_progress:",
+      "status_message": "",
+      "tags": [],
+      "title": "Uppfæra núverandi ferli",
+      "type": "Task",
+      "version": "None.0"
+    },
+    {
+      "aspects": {},
+      "associated_contacts_id": [],
+      "associated_users": [],
+      "connected_users": [
+        "gudrun"
+      ],
+      "contacts": [],
+      "created": "2014-09-28T19:27:14",
+      "created_by": "Guðrún Ósvífursdóttir",
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Task_plural:",
+        "caption_singular": "dynatypes_labels:Task_singular:",
+        "id": "29fd4652-3d8b-11e4-b52b-e72824331a86"
+      },
+      "id": "73502978-4745-11e4-923b-ffb941e52d15",
+      "modified": "2014-09-28T19:27:14",
+      "modified_by": null,
+      "project": {
+        "id": "83b29c9c-3e71-11e4-b515-87790595654d",
+        "identifier": "2014-12",
+        "title": "(2) Vinnustofa - núverandi ferli"
+      },
+      "resource_uri": "/api/v2/tasks/73502978-4745-11e4-923b-ffb941e52d15/",
+      "responsible_users": [
+        {
+          "first_name": "Guðrún",
+          "last_name": "Ósvífursdóttir",
+          "username": "gudrun"
+        }
+      ],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "task_status:Closed:",
+      "status_message": "",
+      "tags": [],
+      "title": "Greina núverandi ferli",
+      "type": "Task",
+      "version": "None.0"
+    },
+    {
+      "aspects": {
+        "timespan": {
+          "all_day": true,
+          "end_time": "2014-10-02T17:00:00",
+          "start_time": "2014-09-28T08:00:00"
+        }
+      },
+      "associated_contacts_id": [],
+      "associated_users": [],
+      "connected_users": [
+        "gudrun"
+      ],
+      "contacts": [],
+      "created": "2014-09-28T19:35:29",
+      "created_by": "Guðrún Ósvífursdóttir",
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:timetask_plural:",
+        "caption_singular": "dynatypes_labels:timetask_singular:",
+        "id": "39cdd0f4-3e82-11e4-98d3-47fd5e558142"
+      },
+      "id": "9a8ddcf0-4746-11e4-b677-db026e61ad0a",
+      "modified": "2014-09-28T19:35:29",
+      "modified_by": null,
+      "project": {
+        "id": "99a03d96-45bc-11e4-b0a6-433844c28942",
+        "identifier": "2014-38",
+        "title": "Super important thing"
+      },
+      "resource_uri": "/api/v2/tasks/9a8ddcf0-4746-11e4-b677-db026e61ad0a/",
+      "responsible_users": [],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "space_status:active:",
+      "status_message": "",
+      "tags": [],
+      "title": "Klára áfanga 1",
+      "type": "Task",
+      "version": "None.0"
+    }
+  ]
+}

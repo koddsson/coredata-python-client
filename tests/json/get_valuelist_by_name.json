@@ -1,0 +1,261 @@
+{
+  "default": null,
+  "entries": [
+    {
+      "name": "templates_labels:dagatals-verklidur_52366c6e-3e82-11e4-8df7-43a41a009d15_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Time tasks",
+        "is": "Dagatals verkliður"
+      }
+    },
+    {
+      "name": "templates_labels:dagatals-verklidur_52366c6e-3e82-11e4-8df7-43a41a009d15_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Time task",
+        "is": "Dagatals verkliður"
+      }
+    },
+    {
+      "name": "templates_labels:Programme_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Programmes",
+        "is": "Verkefnastofnar"
+      }
+    },
+    {
+      "name": "templates_labels:Programme_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Programme",
+        "is": "Verkefnastofn"
+      }
+    },
+    {
+      "name": "templates_labels:dagatals-verkefni_4c14c760-3d9f-11e4-b847-7348dcff5cec_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Calandar",
+        "is": "Dagatals verkefni"
+      }
+    },
+    {
+      "name": "templates_labels:dagatals-verkefni_4c14c760-3d9f-11e4-b847-7348dcff5cec_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Calander ",
+        "is": "Dagatals verkefni"
+      }
+    },
+    {
+      "name": "templates_labels:Audittask_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Audit tasks",
+        "is": "Úttektar atriði"
+      }
+    },
+    {
+      "name": "templates_labels:Audittask_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Audit task",
+        "is": "Úttektar atriði"
+      }
+    },
+    {
+      "name": "templates_labels:Audit_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Audits",
+        "is": "Úttektir"
+      }
+    },
+    {
+      "name": "templates_labels:Audit_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Audit",
+        "is": "Úttekt"
+      }
+    },
+    {
+      "name": "templates_labels:Correctiveaction_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Corrective actions",
+        "is": "Úrbætur"
+      }
+    },
+    {
+      "name": "templates_labels:Correctiveaction_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Corrective action",
+        "is": "Úrbót"
+      }
+    },
+    {
+      "name": "templates_labels:Indication_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Indications",
+        "is": "Ábendingar"
+      }
+    },
+    {
+      "name": "templates_labels:Indication_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Indication",
+        "is": "Ábending"
+      }
+    },
+    {
+      "name": "templates_labels:File_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Files",
+        "is": "Skrár"
+      }
+    },
+    {
+      "name": "templates_labels:File_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "File",
+        "is": "Skrá"
+      }
+    },
+    {
+      "name": "templates_labels:Organization_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Organizations",
+        "is": "Fyrirtæki"
+      }
+    },
+    {
+      "name": "templates_labels:Organization_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Organization",
+        "is": "Fyrirtæki"
+      }
+    },
+    {
+      "name": "templates_labels:Person_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Persons",
+        "is": "Einstaklingar"
+      }
+    },
+    {
+      "name": "templates_labels:Person_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Person",
+        "is": "Einstaklingur"
+      }
+    },
+    {
+      "name": "templates_labels:Section_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Sections",
+        "is": "Flokkar"
+      }
+    },
+    {
+      "name": "templates_labels:Section_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Section",
+        "is": "Flokkur"
+      }
+    },
+    {
+      "name": "templates_labels:Task_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Tasks",
+        "is": "Verkliðir"
+      }
+    },
+    {
+      "name": "templates_labels:Task_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Task",
+        "is": "Verkliður"
+      }
+    },
+    {
+      "name": "templates_labels:Developmentproject_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Development projects",
+        "is": "Þróunarverkefni"
+      }
+    },
+    {
+      "name": "templates_labels:Developmentproject_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Development project",
+        "is": "Þróunarverkefni"
+      }
+    },
+    {
+      "name": "templates_labels:Project_plural:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Projects",
+        "is": "Verkefni"
+      }
+    },
+    {
+      "name": "templates_labels:Project_singular:",
+      "ordering": 0,
+      "parent": null,
+      "translations": {
+        "en": "Project",
+        "is": "Verkefni"
+      }
+    }
+  ],
+  "name": "templates_labels",
+  "parent": null,
+  "resource_uri": "/api/v2/valuelists/templates_labels/",
+  "type": "value"
+}

@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total_count": 4
+  },
+  "objects": [
+    {
+      "aspects": {},
+      "created": "2014-09-16T10:26:19",
+      "created_by": null,
+      "description": "",
+      "dynatype": {},
+      "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+      "is_hidden": false,
+      "modified": "2014-09-16T10:26:19",
+      "modified_by": null,
+      "resource_uri": "/api/v2/spaces/e634f784-3d8b-11e4-82a5-c3059141127e/",
+      "status": "space_status:active:",
+      "tags": [],
+      "title": "Starfsmenn",
+      "type": "Space",
+      "version": "None.0"
+    },
+    {
+      "aspects": {},
+      "created": "2014-09-17T13:34:53",
+      "created_by": null,
+      "description": "",
+      "dynatype": {},
+      "id": "6825a28c-3e6f-11e4-9c46-b7cf8e29a56f",
+      "is_hidden": false,
+      "modified": "2014-09-17T13:34:53",
+      "modified_by": null,
+      "resource_uri": "/api/v2/spaces/6825a28c-3e6f-11e4-9c46-b7cf8e29a56f/",
+      "status": "space_status:active:",
+      "tags": [],
+      "title": "Fjármál",
+      "type": "Space",
+      "version": "None.0"
+    },
+    {
+      "aspects": {},
+      "created": "2014-09-17T14:00:23",
+      "created_by": null,
+      "description": "",
+      "dynatype": {},
+      "id": "f7ca5d26-3e72-11e4-b8a1-674baf76ddd9",
+      "is_hidden": false,
+      "modified": "2014-09-17T14:00:23",
+      "modified_by": null,
+      "resource_uri": "/api/v2/spaces/f7ca5d26-3e72-11e4-b8a1-674baf76ddd9/",
+      "status": "space_status:active:",
+      "tags": [],
+      "title": "Stjórnarfundir",
+      "type": "Space",
+      "version": "None.0"
+    },
+    {
+      "aspects": {},
+      "created": "2014-09-17T14:00:40",
+      "created_by": "Administrator Administrator",
+      "description": "",
+      "dynatype": {},
+      "id": "023a02ca-3e73-11e4-8e50-7b146cbe6428",
+      "is_hidden": false,
+      "modified": "2014-09-30T15:11:19",
+      "modified_by": null,
+      "resource_uri": "/api/v2/spaces/023a02ca-3e73-11e4-8e50-7b146cbe6428/",
+      "status": "space_status:active:",
+      "tags": [],
+      "title": "Upplýsingar",
+      "type": "Space",
+      "version": "0.1"
+    }
+  ]
+}

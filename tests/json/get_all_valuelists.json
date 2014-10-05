@@ -1,0 +1,354 @@
+{
+  "meta": {
+    "limit": 50,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total_count": 49
+  },
+  "objects": [
+    {
+      "default": null,
+      "name": "templates_labels",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/templates_labels/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "dynatypes_labels",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/dynatypes_labels/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "aspectinfo_labels",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/aspectinfo_labels/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "quality_document_type",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/quality_document_type/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "audit_task_status",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/audit_task_status/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "audit_project_status",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/audit_project_status/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "indication_task_status",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/indication_task_status/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "indication_project_status",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/indication_project_status/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "category_type",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/category_type/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "delivery_risk_assessment",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/delivery_risk_assessment/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "cost_risk_assessment",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/cost_risk_assessment/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "cars_type_list",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/cars_type_list/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "cars_status_list",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/cars_status_list/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "quality_document_status",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/quality_document_status/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "error_type",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/error_type/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "device_type",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/device_type/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "file_requirement",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/file_requirement/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "category_contract_secondary_type",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/category_contract_secondary_type/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "disposition_action",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/disposition_action/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "disposition_type",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/disposition_type/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "cutoff_action",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/cutoff_action/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "cutoff_type",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/cutoff_type/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "workflow",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/workflow/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "validation_task",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/validation_task/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "validation_directive",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/validation_directive/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "sensitivity_level",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/sensitivity_level/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "publishing_mode",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/publishing_mode/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "url_label",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/url_label/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "email_label",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/email_label/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "phone_label",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/phone_label/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "address_label",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/address_label/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "meetingminutes_status",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/meetingminutes_status/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "task_status",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/task_status/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "project_status",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/project_status/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "contact_status",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/contact_status/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "profession_category",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/profession_category/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "contact_group",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/contact_group/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "space_type",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/space_type/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "space_status",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/space_status/",
+      "type": "status"
+    },
+    {
+      "default": null,
+      "name": "physical_location",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/physical_location/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "eventCategories",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/eventCategories/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "eventTypes",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/eventTypes/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "nature",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/nature/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "language",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/language/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "subject",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/subject/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "subtopic",
+      "parent": "topic",
+      "resource_uri": "/api/v2/valuelists/subtopic/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "topic",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/topic/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "country",
+      "parent": "continent",
+      "resource_uri": "/api/v2/valuelists/country/",
+      "type": "value"
+    },
+    {
+      "default": null,
+      "name": "continent",
+      "parent": null,
+      "resource_uri": "/api/v2/valuelists/continent/",
+      "type": "value"
+    }
+  ]
+}

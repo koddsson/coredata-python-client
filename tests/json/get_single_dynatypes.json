@@ -1,0 +1,16 @@
+{
+  "caption_plural": "dynatypes_labels:Cars_plural:",
+  "caption_singular": "dynatypes_labels:Cars_singular:",
+  "description": null,
+  "id": "321b90be-3d8b-11e4-8d3e-e72bce805abc",
+  "optional_aspects": [],
+  "required_aspects": [
+    "cars"
+  ],
+  "resource_uri": "/api/v2/dynatypes/321b90be-3d8b-11e4-8d3e-e72bce805abc/",
+  "status_list": null,
+  "systype": "File",
+  "title": "Cars",
+  "type": "Dynatype",
+  "version": "0.1"
+}
