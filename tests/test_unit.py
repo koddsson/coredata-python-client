@@ -132,7 +132,7 @@ class EntityTestCase(object):
         responses = []
         file_path = 'tests/json/get_all_{entity}*.json'.format(
             entity=self.entity.value)
-        for f in glob.glob(file_path):
+        for f in sorted(glob.glob(file_path)):
             responses.append(httpretty.Response(body=open(f).read()))
         httpretty.register_uri(
             httpretty.GET,
