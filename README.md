@@ -21,6 +21,4 @@ something is breaking. You can also get me on
 
 TODO
 ----
-- Go over each and every endpoint and make sure there exists a test for it.
-- Add tests in super class for deleting and editing.
 - Run integration tests against a running server.
