@@ -1,0 +1,318 @@
+{
+  "meta": {
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total_count": 6
+  },
+  "objects": [
+    {
+      "aspects": {},
+      "associated_contacts_id": [],
+      "associated_users": [],
+      "connected_users": [
+        "Administrator"
+      ],
+      "contacts": [],
+      "created": "2014-09-26T20:35:06",
+      "created_by": "Administrator Administrator",
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Project_plural:",
+        "caption_singular": "dynatypes_labels:Project_singular:",
+        "id": "27d4c7b0-3d8b-11e4-8db3-d39b7a5394eb"
+      },
+      "id": "99a03d96-45bc-11e4-b0a6-433844c28942",
+      "identifier": "2014-38",
+      "modified": "2014-09-26T20:35:06",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/99a03d96-45bc-11e4-b0a6-433844c28942/",
+      "responsible_users": [],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "project_status:Pending:",
+      "status_message": "",
+      "tags": [],
+      "title": "Super important thing",
+      "type": "Project",
+      "version": "None.0"
+    },
+    {
+      "aspects": {
+        "timespan": {
+          "all_day": true,
+          "end_time": "2014-10-02T00:00:00",
+          "start_time": "2014-10-01T00:00:00"
+        }
+      },
+      "associated_contacts_id": [],
+      "associated_users": [],
+      "connected_users": [
+        "Administrator",
+        "bardur"
+      ],
+      "contacts": [],
+      "created": "2014-09-17T13:48:40",
+      "created_by": null,
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Calender_plural:",
+        "caption_singular": "dynatypes_labels:Calender_singular:",
+        "id": "1265145c-3d9f-11e4-8efa-5f1100a132f8"
+      },
+      "id": "54edb1d0-3e71-11e4-887c-ef003ef61c6c",
+      "identifier": "2014-11",
+      "modified": "2014-09-17T13:48:40",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/54edb1d0-3e71-11e4-887c-ef003ef61c6c/",
+      "responsible_users": [
+        {
+          "first_name": "Bárður",
+          "last_name": "Dumbsson",
+          "username": "bardur"
+        }
+      ],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "space_status:active:",
+      "status_message": "",
+      "tags": [
+        "undirbúningur"
+      ],
+      "title": "(1) Undirbúningur vinnustofu",
+      "type": "Project",
+      "version": "None.0"
+    },
+    {
+      "aspects": {
+        "timespan": {
+          "all_day": true,
+          "end_time": "2014-10-02T16:00:00",
+          "start_time": "2014-10-02T13:00:00"
+        }
+      },
+      "associated_contacts_id": [],
+      "associated_users": [
+        {
+          "first_name": "Guðrún",
+          "last_name": "Ósvífursdóttir",
+          "username": "gudrun"
+        }
+      ],
+      "connected_users": [
+        "Administrator",
+        "bardur",
+        "gudrun"
+      ],
+      "contacts": [],
+      "created": "2014-09-17T13:49:58",
+      "created_by": null,
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Calender_plural:",
+        "caption_singular": "dynatypes_labels:Calender_singular:",
+        "id": "1265145c-3d9f-11e4-8efa-5f1100a132f8"
+      },
+      "id": "83b29c9c-3e71-11e4-b515-87790595654d",
+      "identifier": "2014-12",
+      "modified": "2014-09-17T13:49:58",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/83b29c9c-3e71-11e4-b515-87790595654d/",
+      "responsible_users": [
+        {
+          "first_name": "Bárður",
+          "last_name": "Dumbsson",
+          "username": "bardur"
+        }
+      ],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "space_status:active:",
+      "status_message": "",
+      "tags": [
+        "núverandi ferli"
+      ],
+      "title": "(2) Vinnustofa - núverandi ferli",
+      "type": "Project",
+      "version": "None.0"
+    },
+    {
+      "aspects": {
+        "timespan": {
+          "all_day": true,
+          "end_time": "2014-10-03T00:00:00",
+          "start_time": "2014-10-03T00:00:00"
+        }
+      },
+      "associated_contacts_id": [],
+      "associated_users": [
+        {
+          "first_name": "Guðrún",
+          "last_name": "Ósvífursdóttir",
+          "username": "gudrun"
+        }
+      ],
+      "connected_users": [
+        "Administrator",
+        "bardur",
+        "gudrun"
+      ],
+      "contacts": [],
+      "created": "2014-09-17T13:50:56",
+      "created_by": null,
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Calender_plural:",
+        "caption_singular": "dynatypes_labels:Calender_singular:",
+        "id": "1265145c-3d9f-11e4-8efa-5f1100a132f8"
+      },
+      "id": "a5b773f8-3e71-11e4-98b5-2fd72486ea46",
+      "identifier": "2014-13",
+      "modified": "2014-09-17T13:50:56",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/a5b773f8-3e71-11e4-98b5-2fd72486ea46/",
+      "responsible_users": [
+        {
+          "first_name": "Bárður",
+          "last_name": "Dumbsson",
+          "username": "bardur"
+        }
+      ],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "space_status:active:",
+      "status_message": "",
+      "tags": [
+        "framtíðarferli"
+      ],
+      "title": "(3) Vinnustofa - framtíðarferli",
+      "type": "Project",
+      "version": "None.0"
+    },
+    {
+      "aspects": {
+        "timespan": {
+          "all_day": true,
+          "end_time": "2014-09-17T17:00:00",
+          "start_time": "2014-10-14T10:00:00"
+        }
+      },
+      "associated_contacts_id": [],
+      "associated_users": [],
+      "connected_users": [
+        "Administrator",
+        "audur",
+        "bardur"
+      ],
+      "contacts": [],
+      "created": "2014-09-17T13:52:18",
+      "created_by": null,
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Calender_plural:",
+        "caption_singular": "dynatypes_labels:Calender_singular:",
+        "id": "1265145c-3d9f-11e4-8efa-5f1100a132f8"
+      },
+      "id": "d71ee462-3e71-11e4-a671-9f316da215e3",
+      "identifier": "2014-14",
+      "modified": "2014-09-17T13:52:18",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/d71ee462-3e71-11e4-a671-9f316da215e3/",
+      "responsible_users": [
+        {
+          "first_name": "Auður",
+          "last_name": "Djúpauga",
+          "username": "audur"
+        },
+        {
+          "first_name": "Bárður",
+          "last_name": "Dumbsson",
+          "username": "bardur"
+        }
+      ],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "space_status:active:",
+      "status_message": "",
+      "tags": [
+        "innleiðing",
+        "skipulag"
+      ],
+      "title": "(4) Skipulagning innleiðingar",
+      "type": "Project",
+      "version": "None.0"
+    },
+    {
+      "aspects": {
+        "timespan": {
+          "all_day": true,
+          "end_time": "2014-10-30T00:00:00",
+          "start_time": "2014-10-27T00:00:00"
+        }
+      },
+      "associated_contacts_id": [],
+      "associated_users": [
+        {
+          "first_name": "Bárður",
+          "last_name": "Dumbsson",
+          "username": "bardur"
+        }
+      ],
+      "connected_users": [
+        "Administrator",
+        "audur",
+        "bardur"
+      ],
+      "contacts": [],
+      "created": "2014-09-17T13:53:03",
+      "created_by": null,
+      "description": "",
+      "due_date": null,
+      "dynatype": {
+        "caption_plural": "dynatypes_labels:Calender_plural:",
+        "caption_singular": "dynatypes_labels:Calender_singular:",
+        "id": "1265145c-3d9f-11e4-8efa-5f1100a132f8"
+      },
+      "id": "f1e27796-3e71-11e4-9086-67f822473650",
+      "identifier": "2014-15",
+      "modified": "2014-09-17T13:59:26",
+      "modified_by": null,
+      "resource_uri": "/api/v2/projects/f1e27796-3e71-11e4-9086-67f822473650/",
+      "responsible_users": [
+        {
+          "first_name": "Auður",
+          "last_name": "Djúpauga",
+          "username": "audur"
+        }
+      ],
+      "space": {
+        "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+        "title": "Starfsmenn"
+      },
+      "status": "space_status:active:",
+      "status_message": "",
+      "tags": [
+        "innleiðing"
+      ],
+      "title": "(5) Innleiðing",
+      "type": "Project",
+      "version": "0.2"
+    }
+  ]
+}

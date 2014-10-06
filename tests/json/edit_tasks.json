@@ -1,0 +1,44 @@
+{
+  "aspects": {
+    "timespan": {
+      "all_day": true,
+      "end_time": "2014-10-02T17:00:00",
+      "start_time": "2014-09-28T08:00:00"
+    }
+  },
+  "associated_contacts_id": [],
+  "associated_users": [],
+  "connected_users": [
+    "gudrun"
+  ],
+  "contacts": [],
+  "created": "2014-09-28T19:35:29",
+  "created_by": "Guðrún Ósvífursdóttir",
+  "description": "",
+  "due_date": null,
+  "dynatype": {
+    "caption_plural": "dynatypes_labels:timetask_plural:",
+    "caption_singular": "dynatypes_labels:timetask_singular:",
+    "id": "39cdd0f4-3e82-11e4-98d3-47fd5e558142"
+  },
+  "id": "9a8ddcf0-4746-11e4-b677-db026e61ad0a",
+  "modified": "2014-09-28T19:35:29",
+  "modified_by": null,
+  "project": {
+    "id": "99a03d96-45bc-11e4-b0a6-433844c28942",
+    "identifier": "2014-38",
+    "title": "Super important thing"
+  },
+  "resource_uri": "/api/v2/tasks/9a8ddcf0-4746-11e4-b677-db026e61ad0a/",
+  "responsible_users": [],
+  "space": {
+    "id": "e634f784-3d8b-11e4-82a5-c3059141127e",
+    "title": "Starfsmenn"
+  },
+  "status": "space_status:active:",
+  "status_message": "",
+  "tags": [],
+  "title": "All your base are belong to us",
+  "type": "Task",
+  "version": "None.0"
+}
