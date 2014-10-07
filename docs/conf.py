@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+""" Sphinx configuration file. """
+
 #
 # Coredata API client documentation build configuration file, created by
 # sphinx-quickstart on Mon Oct  6 19:20:17 2014.
