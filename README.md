@@ -4,6 +4,7 @@ Coredata Python API Client
 [![Coverage Status](https://img.shields.io/coveralls/koddsson/coredata-python-client.svg)](https://coveralls.io/r/koddsson/coredata-python-client)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/koddsson/coredata-python-client/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/koddsson/coredata-python-client/?branch=master)
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=koddsson&url=github.com/koddsson/coredata-python-client&title=coredata-python-client&language=python&tags=github&category=software)
+[![Documentation Status](https://readthedocs.org/projects/coredata-python-client/badge/?version=latest)](https://readthedocs.org/projects/coredata-python-client/?badge=latest)
 
 A Python 2/3 client for the Coredata REST API.
 
